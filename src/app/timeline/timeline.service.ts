@@ -11,13 +11,14 @@ import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my token'
+    // 'Authorization': 'my token'
   })
 };
 
 @Injectable()
 export class TimelineService {
-  moodUrl = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/stich-prdke-bykvb/service/http/incoming_webhook/webhook0';  // URL to web api
+  // tslint:disable-next-line:max-line-length
+  moodUrl = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/stich-prdke-bykvb/service/http/incoming_webhook/testget';  // URL to web api
   private handleError: HandleError;
 
   constructor(

@@ -1,7 +1,7 @@
 export interface Mood {
   id: number;
-  name: string;
   mood: string;
-  img: string;
+  smiley: string;
   user: number;
+  description: string;
 }
