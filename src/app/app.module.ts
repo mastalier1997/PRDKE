@@ -15,8 +15,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LyThemeModule, LY_THEME, LY_THEME_NAME, StyleRenderer, LyTheme2 } from '@alyle/ui';
 import { MinimaLight } from '@alyle/ui/themes/minima';
-import { RegistrationComponent } from './registration/registration.component';
-import { LoginComponent } from './login/login.component';
 
 
 
@@ -31,9 +29,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TimelineComponent,
-    RegistrationComponent,
-    LoginComponent,
+    TimelineComponent
 
   ],
     imports: [
