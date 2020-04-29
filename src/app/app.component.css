@@ -93,7 +93,7 @@ section{
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
 
-  color: white;
+  color: black;
   padding: 14px 20px;
 
 
@@ -113,3 +113,6 @@ section{
 .lh-125 { line-height: 1.25; }
 .lh-150 { line-height: 1.5;}
 
+.title{
+  color: white;
+}
