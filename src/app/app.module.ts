@@ -15,6 +15,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LyThemeModule, LY_THEME, LY_THEME_NAME, StyleRenderer, LyTheme2 } from '@alyle/ui';
 import { MinimaLight } from '@alyle/ui/themes/minima';
+import { PostComponent } from './post/post.component';
 
 
 
@@ -29,23 +30,25 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    TimelineComponent
+    TimelineComponent,
+    PostComponent
 
   ],
-    imports: [
-        BrowserModule,
-        NgbModule,
+  imports: [
+    BrowserModule,
+    NgbModule,
 
-        HttpClientModule,
-        HttpClientXsrfModule.withOptions({
-            cookieName: 'My-Xsrf-Cookie',
-            headerName: 'My-Xsrf-Header',
-        }),
-        RouterModule,
-        BrowserAnimationsModule,
-        HammerModule,
+    HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'My-Xsrf-Cookie',
+      headerName: 'My-Xsrf-Header',
+    }),
+    RouterModule,
+    BrowserAnimationsModule,
+    HammerModule,
+    FormsModule,
 
-    ],
+  ],
   providers: [
     HttpErrorHandler,
     MessageService,
