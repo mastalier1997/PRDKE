@@ -1,0 +1,7 @@
+<!-- Moods Input -->
+<form class="form-inline my-5 my-lg-0">
+  <input #emoji class="textboxclass" type="text" placeholder="Emojy" aria-label="Post">
+  <input #text class="textboxclass" type="text" placeholder="Write your Mood" aria-label="Post">
+</form>
+
+<button class="btn btn-outline-success my-2 my-sm-0" (click)="postMood(emoji.value, text.value)">Post </button >

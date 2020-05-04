@@ -18,8 +18,7 @@ export class TimelineComponent implements OnInit {
   }
 
   getMoods(): void {
-    this.timelineService.getMoods()
+    this.timelineService.getAllMoods()
       .subscribe(moods => (this.moods = moods));
   }
-
 }

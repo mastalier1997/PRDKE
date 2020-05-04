@@ -15,21 +15,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LyThemeModule, LY_THEME, LY_THEME_NAME, StyleRenderer, LyTheme2 } from '@alyle/ui';
 import { MinimaLight } from '@alyle/ui/themes/minima';
-
-
-
-
-
+import { PostServiceComponent } from './post-service/post-service.component';
 
 const routes: Routes = [
-
   { path: 'timeline', component: TimelineComponent }           // Add this
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    TimelineComponent
+    TimelineComponent,
+    PostServiceComponent
 
   ],
     imports: [

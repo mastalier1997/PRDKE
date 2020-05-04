@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+#postDate{
+  margin-right: 15px;
+}
+
+#licence{
+  margin-top: 50px;
+  margin-left: 50px;
+}
