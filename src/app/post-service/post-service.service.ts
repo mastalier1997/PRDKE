@@ -8,12 +8,16 @@ const httpOptions = {
   })
 };
 
+const userID = 1;
+
 @Injectable({
   providedIn: 'root'
 })
 export class PostServiceService {
 
   postMoodUrl = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood';
+  postElasticUrl = 'http://34.65.173.197:9200/post/_doc';
+
 
   private handleError: HandleError;
 
@@ -27,5 +31,7 @@ export class PostServiceService {
   postMoods(emoji, text) {
 
     this.http.post<any>(this.postMoodUrl, '{"emoji":"' + emoji + '","text":"' + text + '"}', httpOptions).subscribe();
+    this.http.post<any>(this.postElasticUrl, '{"emoji":"' + emoji + '","text":"' + text + '","userID":"' + userID
+      + '","timestamp":"' + Date.now() + '" }', httpOptions).subscribe();
   }
 }
