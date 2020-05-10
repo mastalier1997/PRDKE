@@ -2,7 +2,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 
@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LyThemeModule, LY_THEME, LY_THEME_NAME, StyleRenderer, LyTheme2 } from '@alyle/ui';
 import { MinimaLight } from '@alyle/ui/themes/minima';
 import { PostServiceComponent } from './post-service/post-service.component';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 const routes: Routes = [
   { path: 'timeline', component: TimelineComponent }           // Add this
@@ -40,6 +41,9 @@ const routes: Routes = [
         RouterModule,
         BrowserAnimationsModule,
         HammerModule,
+        NgSelectModule,
+        FormsModule,
+        ReactiveFormsModule
 
     ],
   providers: [

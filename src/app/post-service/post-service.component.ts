@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PostServiceService} from './post-service.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-post-service',
@@ -8,10 +9,15 @@ import {PostServiceService} from './post-service.service';
   styleUrls: ['./post-service.component.css']
 })
 export class PostServiceComponent implements OnInit {
+  angForm: FormGroup;
 
-  constructor(private postService: PostServiceService) {}
+  constructor(private postService: PostServiceService, private  fb: FormBuilder) {this.createForm()}
 
   ngOnInit(): void {
+  }
+
+  createForm() {
+    this.angForm = this.fb.group({postText: ['', Validators.minLength(1)]});
   }
 
   postMood(emoji, text): void {

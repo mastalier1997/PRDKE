@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Symbola";
+  src: url("https://github.com/ChALkeR/Symbola-Emoji/blob/master/dist/Symbola-Emoji.woff") format("woff"),
+  url("https://github.com/ChALkeR/Symbola-Emoji/blob/master/dist/Symbola-Emoji.ttf") format("ttf");
+}
+
+.emoji {
+  font-family: "Symbola"
+}
