@@ -1,0 +1,23 @@
+<!-- Moods Input -->
+<form [formGroup]="angForm"  class="form-inline my-5 my-lg-0">
+  <select #emoji class="textboxclass" type="text" placeholder="Emojy" aria-label="Post" required>
+    <option value="" disabled selected>Emojy</option>
+    <option value="angry" style="background-image:url(~assets/emoticons/png/angry.png);">angry</option>
+    <option value="bored" style="background-image:url(~assets/emoticons/png/bored.png);">bored</option>
+    <option value="confused" style="background-image:url(~assets/emoticons/png/confused.png);">confused</option>
+    <option value="embarrassed" style="background-image:url(~assets/emoticons/png/embarrassed.png);">embarrassed</option>
+    <option value="happy" style="background-image:url(~assets/emoticons/png/happy.png);">happy</option>
+    <option value="kissing" style="background-image:url(~assets/emoticons/png/kissing.png);">kissing</option>
+    <option value="unhappy" style="background-image:url(~assets/emoticons/png/unhappy.png);">unhappy</option>
+  </select>
+  <input #text id="postText" name="postText" class="form-control" type="text" placeholder="Write your Mood" aria-label="Post"
+         formControlName="postText" required>
+  <div *ngIf="angForm.controls['postText'].invalid && (angForm.controls['postText'].dirty
+  || angForm.controls['postText'].touched)" class="alert alert-danger">
+    <div *ngIf="angForm.controls['postText'].errors.required">Text required</div>
+  </div>
+
+
+</form>
+
+<button class="btn btn-outline-success my-2 my-sm-0" (click)="postMood(emoji.value, text.value)">Post </button >

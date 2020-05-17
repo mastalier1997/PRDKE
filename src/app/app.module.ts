@@ -2,7 +2,7 @@ import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 
@@ -15,15 +15,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LyThemeModule, LY_THEME, LY_THEME_NAME, StyleRenderer, LyTheme2 } from '@alyle/ui';
 import { MinimaLight } from '@alyle/ui/themes/minima';
-import { PostComponent } from './post/post.component';
-
-
-
-
-
+import { PostServiceComponent } from './post-service/post-service.component';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 const routes: Routes = [
-
   { path: 'timeline', component: TimelineComponent }           // Add this
 ];
 
@@ -31,24 +26,26 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TimelineComponent,
-    PostComponent
+    PostServiceComponent
 
   ],
-  imports: [
-    BrowserModule,
-    NgbModule,
+    imports: [
+        BrowserModule,
+        NgbModule,
 
-    HttpClientModule,
-    HttpClientXsrfModule.withOptions({
-      cookieName: 'My-Xsrf-Cookie',
-      headerName: 'My-Xsrf-Header',
-    }),
-    RouterModule,
-    BrowserAnimationsModule,
-    HammerModule,
-    FormsModule,
+        HttpClientModule,
+        HttpClientXsrfModule.withOptions({
+            cookieName: 'My-Xsrf-Cookie',
+            headerName: 'My-Xsrf-Header',
+        }),
+        RouterModule,
+        BrowserAnimationsModule,
+        HammerModule,
+        NgSelectModule,
+        FormsModule,
+        ReactiveFormsModule
 
-  ],
+    ],
   providers: [
     HttpErrorHandler,
     MessageService,

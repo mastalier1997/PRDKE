@@ -6,13 +6,11 @@ body {
 
 body {
   padding-top: 56px;
-
-
 }
+
 section{
   background-color: #343a40;
-  background-image: url("https://i.pinimg.com/originals/04/58/cb/0458cbfb0c6109872b67d14b7ac18e22.jpg");
-
+  background-image:  url("https://i.pinimg.com/originals/04/58/cb/0458cbfb0c6109872b67d14b7ac18e22.jpg");
 }
 @media (max-width: 991.98px) {
   .offcanvas-collapse {
@@ -95,19 +93,15 @@ section{
 
   color: black;
   padding: 14px 20px;
-
-
   border-radius: 4px;
 
 }
+
 .b {
   height: 30px;
   widtt: 50px;
   color: #343a40;
-
-
 }
-
 
 .lh-100 { line-height: 1; }
 .lh-125 { line-height: 1.25; }
