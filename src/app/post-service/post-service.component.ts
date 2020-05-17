@@ -11,13 +11,13 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 export class PostServiceComponent implements OnInit {
   angForm: FormGroup;
 
-  constructor(private postService: PostServiceService, private  fb: FormBuilder) {this.createForm()}
+  constructor(private postService: PostServiceService, private  fb: FormBuilder) {this.createForm(); }
 
   ngOnInit(): void {
   }
 
   createForm() {
-    this.angForm = this.fb.group({postText: ['', Validators.minLength(1)]});
+    this.angForm = this.fb.group({postText: ['', Validators.required]});
   }
 
   postMood(emoji, text): void {

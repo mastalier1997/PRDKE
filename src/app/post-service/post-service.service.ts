@@ -8,7 +8,7 @@ const httpOptions = {
   })
 };
 
-const userID = 1;
+const userID = '5eada3f00952b44e417fcf82';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,8 @@ export class PostServiceService {
   /** POST Moods to the server */
   postMoods(emoji, text) {
 
-    this.http.post<any>(this.postMoodUrl, '{"emoji":"' + emoji + '","text":"' + text + '"}', httpOptions).subscribe();
+    this.http.post<any>(this.postMoodUrl, '{"emoji":"' + emoji + '","text":"' + text + '","userID":"' + userID
+      + '"}', httpOptions).subscribe();
     this.http.post<any>(this.postElasticUrl, '{"emoji":"' + emoji + '","text":"' + text + '","userID":"' + userID
       + '","timestamp":"' + Date.now() + '" }', httpOptions).subscribe();
   }
