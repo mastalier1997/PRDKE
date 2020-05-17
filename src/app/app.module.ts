@@ -17,6 +17,7 @@ import { LyThemeModule, LY_THEME, LY_THEME_NAME, StyleRenderer, LyTheme2 } from 
 import { MinimaLight } from '@alyle/ui/themes/minima';
 import { PostServiceComponent } from './post-service/post-service.component';
 import {NgSelectModule} from '@ng-select/ng-select';
+import {SearchServiceComponent} from './search-service/search.component';
 
 const routes: Routes = [
   { path: 'timeline', component: TimelineComponent }           // Add this
@@ -26,7 +27,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     TimelineComponent,
-    PostServiceComponent
+    PostServiceComponent,
+    SearchServiceComponent
 
   ],
     imports: [
