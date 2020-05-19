@@ -17,11 +17,27 @@ export class PostServiceComponent implements OnInit {
   }
 
   createForm() {
-    this.angForm = this.fb.group({postText: ['', Validators.required]});
+    this.angForm = this.fb.group({
+      emoji: ['', Validators.required],
+      postText: ['', Validators.required]
+    });
   }
 
-  postMood(emoji, text): void {
+  postMood(): void {
+    const emoji = this.angForm.get('emoji').value;
+    const text = this.angForm.get('postText').value;
     this.postService.postMoods(emoji, text);
+    // Call to reset the form values
+    this.angForm.get('postText').reset();
+
+    function delay(ms: number) {
+      return new Promise( resolve => setTimeout(resolve, ms) );
+    }
+
+    (async () => {
+      await delay(300);
+      location.reload();
+    })();
   }
 
 }
