@@ -28,6 +28,7 @@
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
     "@ng-select/ng-select": "^4.0.0",
     "angular-emoji": "^0.1.45",
+    "elasticsearch": "^16.7.1",
     "mongodb-stitch-browser-sdk": "^4.8.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
