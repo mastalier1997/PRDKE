@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {SearchService} from './search.service';
 import {User} from '../timeline/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
 
 @Component({
   selector: 'app-search-service',
@@ -10,23 +9,20 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   providers: [SearchService],
   styleUrls: ['./search.component.css']
 })
+
 export class SearchServiceComponent {
   user: User;
-  angForm: FormGroup;
+  angForm2 = this.fb.group({
+    searchText: ['', Validators.required]
+  });
 
+  constructor(private searchservice: SearchService, private fb: FormBuilder) { }
 
-  constructor(private searchservice: SearchService, private  fb: FormBuilder) {
-    this.createSearchForm();
+  getUser() {
+    const userName = this.angForm2.value.searchText;
+    console.log(this.angForm2.value, userName);
+    this.searchservice.getElasticResult(userName).subscribe(user => (this.user = user))
   }
 
-  createSearchForm() {
-    this.angForm = this.fb.group({
-      searchText: ['', Validators.required]
-    });
-  }
 
-  getUser(): void {
-    const text = this.angForm.get('searchText').value;
-    this.searchservice.getElasticResult(text).subscribe(user => (this.user = user));
-  }
 }

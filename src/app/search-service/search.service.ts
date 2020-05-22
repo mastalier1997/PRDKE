@@ -18,7 +18,6 @@ const httpOptions = {
 export class SearchService {
 
   getElastic = 'http://34.65.38.205:9200/users/_doc/_search?q=username:';
-
   private handleError: HandleError;
 
   constructor(
@@ -29,6 +28,8 @@ export class SearchService {
   /** GET elasticsearch result */
   getElasticResult( text: string ): Observable<User> {
     return this.http.get<User>(this.getElastic + text);
+    console.log('adasd');
+
   }
 }
 
