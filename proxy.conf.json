@@ -1,6 +1,6 @@
 {
-  "/rest/elastic/*": {
-    "target": "http://34.65.173.197/",
+  "/post/*": {
+    "target": "http://34.65.38.205:9200",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true

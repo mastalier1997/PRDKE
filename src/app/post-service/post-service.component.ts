@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PostServiceService} from './post-service.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
+
 @Component({
   selector: 'app-post-service',
   templateUrl: './post-service.component.html',
@@ -36,7 +37,7 @@ export class PostServiceComponent implements OnInit {
 
     (async () => {
       await delay(300);
-      location.reload();
+      // location.reload();
     })();
   }
 

@@ -17,7 +17,7 @@ const httpOptions = {
 
 export class SearchService {
 
-  getElastic = 'http://34.65.38.205:9200/users/_doc/_search?q=username:';
+  getElastic = 'http://34.65.38.205:9200/users/_doc/_search?q=username';
   private handleError: HandleError;
 
   constructor(

@@ -16,7 +16,7 @@ const userID = '5eada3f00952b44e417fcf82';
 export class PostServiceService {
 
   postMoodUrl = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood';
-  postElasticUrl = 'http://34.65.173.197:9200/post/_doc';
+  postElasticUrl = 'http://34.65.38.205:9200/post/_doc';
 
 
   private handleError: HandleError;
