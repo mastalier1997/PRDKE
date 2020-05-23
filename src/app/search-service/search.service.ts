@@ -27,7 +27,8 @@ export class SearchService {
   }
   /** GET elasticsearch result */
   getElasticResult( text: string ): Observable<User> {
-    return this.http.get<User>(this.getElastic + text);
+    this.http.get<any>(this.getElastic + text).subscribe(res => console.log(res));
+    return  this.http.get<any>(this.getElastic + text);
     console.log('adasd');
 
   }

@@ -16,7 +16,7 @@ const userID = '5eada3f00952b44e417fcf82';
 export class PostServiceService {
 
   postMoodUrl = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood';
-  postElasticUrl = 'http://34.65.38.205:9200/test/_doc';
+  postElasticUrl = 'http://34.65.38.205:9200/posts/_doc';
 
 
   private handleError: HandleError;
@@ -30,17 +30,32 @@ export class PostServiceService {
   /** POST Moods to the server */
   postMoods(emoji, text) {
 
-    const body = new HttpParams()
+    /*const body = new HttpParams()
       .set('emoji', emoji)
       .set('text', text)
       .set('userID', userID)
       .set('timestamp', String(Date.now()));
+
+    const req = {
+      emoji,
+      text,
+      userID,
+      timeStamp: Date.now(),
+    };*/
 
     const config = new HttpHeaders().set('Content-Type', 'application/json')
       .set('Accept', 'application/json');
 
     this.http.post<any>(this.postMoodUrl, '{"emoji":"' + emoji + '","text":"' + text + '","userID":"' + userID
       + '"}', httpOptions).subscribe();
-    this.http.post<any>(this.postElasticUrl,  body.toString(), httpOptions).subscribe();
+    // this.http.post<any>(this.postElasticUrl,  body.toString(), httpOptions).subscribe();
+    // this.http.post<any>(this.postElasticUrl, body, httpOptions).subscribe();
+    this.http.post<any>(this.postElasticUrl, '{\n' +
+      '    "emoji": "' + emoji + '",\n' +
+      '    "text": "' + text + '",\n' +
+      '    "userID": "' + userID + '",\n' +
+      '    "timestamp": "' + Date.now() + '"\n' +
+      '  }', httpOptions).subscribe();
+
   }
 }
