@@ -37,7 +37,7 @@ export class PostServiceComponent implements OnInit {
 
     (async () => {
       await delay(300);
-      // location.reload();
+      location.reload();
     })();
   }
 
