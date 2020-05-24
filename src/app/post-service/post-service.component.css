@@ -7,3 +7,35 @@
 .emoji {
   font-family: "Symbola"
 }
+
+.post{
+  background: black;
+  height: 100px;
+}
+
+.post-form{
+  float: bottom;
+}
+
+.post-button{
+  display: grid;
+
+}
+
+.post-button *{
+  display: inline-flex;
+}
+
+.post-text{
+  width: 100%;
+}
+.post-text *{
+ width: 100%;
+}
+
+.post-emojy {
+  display: grid;
+  grid-column: 9;
+  grid-row: 1;
+}
+

@@ -18,6 +18,10 @@ import { MinimaLight } from '@alyle/ui/themes/minima';
 import { PostServiceComponent } from './post-service/post-service.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import {SearchServiceComponent} from './search-service/search.component';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+import {EmojiModule} from '@ctrl/ngx-emoji-mart/ngx-emoji';
+
+
 
 const routes: Routes = [
   { path: 'timeline', component: TimelineComponent }           // Add this
@@ -31,23 +35,25 @@ const routes: Routes = [
     SearchServiceComponent
 
   ],
-    imports: [
-        BrowserModule,
-        NgbModule,
+  imports: [
+    BrowserModule,
+    NgbModule,
 
-        HttpClientModule,
-        HttpClientXsrfModule.withOptions({
-            cookieName: 'My-Xsrf-Cookie',
-            headerName: 'My-Xsrf-Header',
-        }),
-        RouterModule,
-        BrowserAnimationsModule,
-        HammerModule,
-        NgSelectModule,
-        FormsModule,
-        ReactiveFormsModule
+    HttpClientModule,
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'My-Xsrf-Cookie',
+      headerName: 'My-Xsrf-Header',
+    }),
+    RouterModule,
+    BrowserAnimationsModule,
+    HammerModule,
+    NgSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PickerModule,
+    EmojiModule
 
-    ],
+  ],
   providers: [
     HttpErrorHandler,
     MessageService,

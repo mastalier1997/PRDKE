@@ -41,4 +41,8 @@ export class PostServiceComponent implements OnInit {
     })();
   }
 
+  addEmoji($event) {
+    const data = this.angForm.get('inputField');
+    data.patchValue(data.value + $event.emoji.native);
+  }
 }
