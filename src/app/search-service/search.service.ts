@@ -19,6 +19,7 @@ export class SearchService {
 
   getElastic = 'http://34.65.38.205:9200/users/_doc/_search?q=';
   private handleError: HandleError;
+  body;
 
   constructor(
     private http: HttpClient,
@@ -27,9 +28,13 @@ export class SearchService {
   }
   /** GET elasticsearch result */
   getElasticResult( text: string ): Observable<User> {
-    this.http.get<User>(this.getElastic + text).subscribe(res => console.log(res));
+    this.http.get<User>(this.getElastic + text).subscribe(res => this.body = res);
+    console.log(this.bodyText);
     return  this.http.get<User>(this.getElastic + text, {responseType: 'json'});
+  }
 
+  get bodyText() {
+    return this.body;
   }
 
 }
