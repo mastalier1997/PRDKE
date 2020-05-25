@@ -27,9 +27,9 @@ export class SearchServiceComponent implements OnInit {
   getUser() {
     const userName = this.angForm2.value.searchText;
     console.log(this.angForm2.value, userName);
-    this.searchservice.getElasticResult(userName).subscribe(user => (this.user = user));
-    this.searchservice.getElasticResult(userName).subscribe(user => { console.log(user); console.log(this.user); } );
-
+    this.searchservice.getElasticResult(userName).subscribe((data: any) => {
+      this.user = data.hits.hits[0]._source;
+    });
   }
   getObject() {
     return this.user;
