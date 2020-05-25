@@ -2,6 +2,7 @@ import {Component, OnInit, Pipe, PipeTransform} from '@angular/core';
 import {SearchService} from './search.service';
 import {User} from '../timeline/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {HttpResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-search-service',
@@ -10,19 +11,28 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./search.component.css']
 })
 
-export class SearchServiceComponent {
+export class SearchServiceComponent implements OnInit {
   user: User;
   angForm2 = this.fb.group({
     searchText: ['', Validators.required]
   });
+
+  ngOnInit() {
+    this.getUser();
+    this.getObject();
+  }
 
   constructor(private searchservice: SearchService, private fb: FormBuilder) { }
 
   getUser() {
     const userName = this.angForm2.value.searchText;
     console.log(this.angForm2.value, userName);
-    this.searchservice.getElasticResult(userName).subscribe(user => (this.user = user))
-  }
+    this.searchservice.getElasticResult(userName).subscribe(user => (this.user = user));
+    this.searchservice.getElasticResult(userName).subscribe(user => { console.log(user); console.log(this.user); } );
 
+  }
+  getObject() {
+    return this.user;
+  }
 
 }

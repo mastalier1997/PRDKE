@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HandleError, HttpErrorHandler} from '../http-error-handler.service';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import {User} from '../timeline/user';
 import {Observable} from 'rxjs';
-
+import {map, tap} from 'rxjs/operators';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,7 +17,7 @@ const httpOptions = {
 
 export class SearchService {
 
-  getElastic = 'http://34.65.38.205:9200/users/_doc/_search?q=username';
+  getElastic = 'http://34.65.38.205:9200/users/_doc/_search?q=';
   private handleError: HandleError;
 
   constructor(
@@ -27,10 +27,10 @@ export class SearchService {
   }
   /** GET elasticsearch result */
   getElasticResult( text: string ): Observable<User> {
-    this.http.get<any>(this.getElastic + text).subscribe(res => console.log(res));
-    return  this.http.get<any>(this.getElastic + text);
-    console.log('adasd');
+    this.http.get<User>(this.getElastic + text).subscribe(res => console.log(res));
+    return  this.http.get<User>(this.getElastic + text, {responseType: 'json'});
 
   }
+
 }
 
