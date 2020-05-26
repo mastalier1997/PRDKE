@@ -12,19 +12,23 @@
         </div>
       </div>
 
-      <div class="post-emojy">
-        <select #emoji class="textboxclass" type="text" placeholder="Emojy" aria-label="Post" formControlName="emoji" required>
-          <option value="" disabled selected>Emojy</option>
-          <option value="angry" style="background-image:url(./src/assets/emoticons/png/angry.png);">angry</option>
-          <option value="bored" style="background-image:url(~assets/emoticons/png/bored.png);">bored</option>
-          <option value="confused" style="background-image:url(~assets/emoticons/png/confused.png);">confused</option>
-          <option value="embarrassed" style="background-image:url(~assets/emoticons/png/embarrassed.png);">embarrassed</option>
-          <option value="happy" style="background-image:url(~assets/emoticons/png/happy.png);">happy</option>
-          <option value="kissing" style="background-image:url(~assets/emoticons/png/kissing.png);">kissing</option>
-          <option value="unhappy" style="background-image:url(~assets/emoticons/png/unhappy.png);">unhappy</option>
-          <option value="sad">sad</option>
-        </select>
-      </div>
+        <div class="post-emojy">
+          <select #emoji class="textboxclass" type="text" placeholder="Emojy" aria-label="Post" formControlName="emoji" required>
+            <option value="" disabled selected>😀</option>
+            <option value="angry" style="background-image:url(./src/assets/emoticons/png/angry.png);">angry</option>
+            <option value="bored" style="background-image:url(~assets/emoticons/png/bored.png);">bored</option>
+            <option value="confused" style="background-image:url(~assets/emoticons/png/confused.png);">confused</option>
+            <option value="embarrassed" style="background-image:url(~assets/emoticons/png/embarrassed.png);">embarrassed</option>
+            <option value="happy" style="background-image:url(~assets/emoticons/png/happy.png);">happy</option>
+            <option value="kissing" style="background-image:url(~assets/emoticons/png/kissing.png);">kissing</option>
+            <option value="unhappy" style="background-image:url(~assets/emoticons/png/unhappy.png);">unhappy</option>
+            <option value="sad">sad</option>
+          </select>
+        </div>
+
+        <div class="post-button">
+          <button [disabled]="angForm.invalid" class="btn btn-outline-success my-2 my-sm-0" (click)="postMood()">Post </button >
+        </div>
       <script type="text/javascript">
         function swapImage(){
           var image = document.getElementById("imageToSwap");
@@ -34,8 +38,5 @@
       </script>
 
     </form>
-  </div>
-  <div class="post-button">
-    <button [disabled]="angForm.invalid" class="btn btn-outline-success my-2 my-sm-0" (click)="postMood()">Post </button >
   </div>
 </div>

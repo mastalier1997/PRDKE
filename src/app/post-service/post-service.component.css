@@ -18,12 +18,12 @@
 }
 
 .post-button{
-  display: grid;
-
+  margin-top: 1em;
+  margin-left: 55em;
 }
 
 .post-button *{
-  display: inline-flex;
+
 }
 
 .post-text{
@@ -34,8 +34,8 @@
 }
 
 .post-emojy {
-  display: grid;
-  grid-column: 9;
-  grid-row: 1;
+  margin-top: 1.2em;
+  margin-left: 1.5em;
 }
+
 
