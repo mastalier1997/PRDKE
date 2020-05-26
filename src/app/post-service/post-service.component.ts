@@ -10,12 +10,27 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./post-service.component.css']
 })
 export class PostServiceComponent implements OnInit {
-  angForm: FormGroup;
 
   constructor(private postService: PostServiceService, private  fb: FormBuilder) {this.createForm(); }
+  angForm: FormGroup;
+
+  emojis = [
+      {
+        displayValue: '😠',
+        value: 'angry',
+        src: './src/assets/emoticons/png/angry.png'
+      },
+      {
+        displayValue: '😮',
+        value: 'bored',
+        src: '~assets/emoticons/png/bored.png'
+      },
+
+  ];
 
   ngOnInit(): void {
   }
+
 
   createForm() {
     this.angForm = this.fb.group({
