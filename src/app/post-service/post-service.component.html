@@ -13,15 +13,6 @@
       </div>
         <<div class="post-emojy">
           <select #emoji class="textboxclass" type="text" placeholder="Choose your mood" aria-label="Post" formControlName="emoji" required>
-            <!--<option value="" disabled selected>😀</option>
-            <option value="angry" style="background-image:url(./src/assets/emoticons/png/angry.png);">angry</option>
-            <option value="bored" style="background-image:url(~assets/emoticons/png/bored.png);">bored</option>
-            <option value="confused" style="background-image:url(~assets/emoticons/png/confused.png);">confused</option>
-            <option value="embarrassed" style="background-image:url(~assets/emoticons/png/embarrassed.png);">embarrassed</option>
-            <option value="happy" style="background-image:url(~assets/emoticons/png/happy.png);">happy</option>
-            <option value="kissing" style="background-image:url(~assets/emoticons/png/kissing.png);">kissing</option>
-            <option value="unhappy" style="background-image:url(~assets/emoticons/png/unhappy.png);">unhappy</option>
-            <option value="sad">sad</option>-->
             <option value="" selected disabled hidden>😀</option>
             <option *ngFor="let emoji of emojis" [ngValue]="emoji.value">
               {{ emoji.displayValue }}

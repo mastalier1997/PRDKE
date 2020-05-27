@@ -20,32 +20,142 @@ export class PostServiceComponent implements OnInit {
         value: 'happy'
       },
       {
-        displayValue: '😮',
-        value: 'bored'
+        displayValue: '😊',
+        value: 'blushed'
       },
       {
-        displayValue: '😘',
-        value: 'kissing'
+        displayValue: '😁',
+        value: 'grinning'
       },
       {
-        displayValue: '😐',
+        displayValue: '😅',
         value: 'confused'
       },
       {
-        displayValue: '😳',
-        value: 'embarrassed'
+        displayValue: '😃',
+        value: 'happy3'
       },
       {
-        displayValue: '😠',
-        value: 'angry'
+        displayValue: '😄',
+        value: 'happy4'
       },
       {
-        displayValue: '😢',
-          value: 'unhappy'
+        displayValue: '😆',
+          value: 'happy5'
       },
       {
+        displayValue: '😷',
+        value: 'sick'
+      },
+      {
+        displayValue: '😲',
+        value: 'astonished'
+      },
+      {
+        displayValue: '😰',
+        value: 'cold'
+      },
+      {
+        displayValue: '😭',
+        value: 'cry'
+      },
+      {
+        displayValue: '😈',
+        value: 'devil'
+      },
+      {
+        displayValue: '😑',
+        value: 'expressionless'
+      },
+      {
+        displayValue: '🙄',
+        value: 'eyeRoll'
+      },
+      {
+        displayValue: '😦',
+        value: 'frowning'
+      }, {
+        displayValue: '😲',
+        value: 'flushed'
+      }, {
+        displayValue: '👻',
+        value: 'ghost'
+      }, {
+        displayValue: '🙃',
+        value: 'happy-upside'
+      }, {
+        displayValue: '🤗',
+        value: 'hugging'
+      }, {
+        displayValue: '😯',
+        value: 'hushed'
+      }, {
+        displayValue: '😂',
+        value: 'joy'
+      }, {
+        displayValue: '😘',
+        value: 'kissing'
+      }, {
+        displayValue: '🤑',
+        value: 'money'
+      }, {
+        displayValue: '🤓',
+        value: 'nerd'
+      }, {
+        displayValue: '😱',
+        value: 'omg'
+      }, {
+        displayValue: '💩',
+        value: 'poop'
+      },
+      {
+        displayValue: '😌',
+        value: 'relieved'
+      }, {
+        displayValue: '😞',
+        value: 'sad'
+      }, {
+        displayValue: '😏',
+        value: 'smrik'
+      }, {
+        displayValue: '😎',
+        value: 'poop'
+      }, {
+        displayValue: '💩',
+        value: 'sunglasses'
+      }, {
+        displayValue: '🤔',
+        value: 'thinking'
+      }, {
+        displayValue: '😛',
+        value: 'tongue-out'
+      }, {
+        displayValue: '😝',
+        value: 'tongue-out2'
+      }, {
+      displayValue: '😜',
+      value: 'tongue-out3'
+      }, {
+      displayValue: '😒',
+      value: 'unamused'
+      },  {
+        displayValue: '😡',
+        value: 'vangry'
+      }, {
+        displayValue: '😤',
+        value: 'vmad'
+      }, {
         displayValue: '🙁',
-        value: 'unhappy'
+        value: 'vasd'
+      }, {
+        displayValue: '😉',
+        value: 'wink'
+      }, {
+        displayValue: '😶',
+        value: 'without'
+      }, {
+        displayValue: '🤐',
+        value: 'zipper'
       }
   ];
 
