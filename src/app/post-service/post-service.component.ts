@@ -16,16 +16,37 @@ export class PostServiceComponent implements OnInit {
 
   emojis = [
       {
-        displayValue: '😠',
-        value: 'angry',
-        src: './src/assets/emoticons/png/angry.png'
+        displayValue: '😀',
+        value: 'happy'
       },
       {
         displayValue: '😮',
-        value: 'bored',
-        src: '~assets/emoticons/png/bored.png'
+        value: 'bored'
       },
-
+      {
+        displayValue: '😘',
+        value: 'kissing'
+      },
+      {
+        displayValue: '😐',
+        value: 'confused'
+      },
+      {
+        displayValue: '😳',
+        value: 'embarrassed'
+      },
+      {
+        displayValue: '😠',
+        value: 'angry'
+      },
+      {
+        displayValue: '😢',
+          value: 'unhappy'
+      },
+      {
+        displayValue: '🙁',
+        value: 'unhappy'
+      }
   ];
 
   ngOnInit(): void {
