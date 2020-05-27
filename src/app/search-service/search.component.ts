@@ -12,6 +12,7 @@ import {HttpResponse} from '@angular/common/http';
 })
 
 export class SearchServiceComponent implements OnInit {
+  isDivHidden = false;
   user: User;
   angForm2 = this.fb.group({
     searchText: ['', Validators.required]
@@ -35,4 +36,11 @@ export class SearchServiceComponent implements OnInit {
     return this.user;
   }
 
+  changeVisibility() {
+    this.isDivHidden = !this.isDivHidden;
+  }
+
+  userNull() {
+    this.user = null;
+  }
 }
