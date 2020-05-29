@@ -11,26 +11,18 @@
           <div *ngIf="angForm.controls['postText'].errors.required">Text required</div>
         </div>
       </div>
-        <<div class="post-emojy">
-          <select #emoji class="textboxclass" type="text" placeholder="Choose your mood" aria-label="Post" formControlName="emoji" required>
-            <option value="" selected disabled hidden>😀</option>
-            <option *ngFor="let emoji of emojis" [ngValue]="emoji.value">
-              {{ emoji.displayValue }}
-            </option>
-          </select>
-
-        </div>
+      <div id="baseDiv" style="color: white">Click Me</div>
+      <div id="popUpDiv" class="post-emojy">
+        <select #emoji class="textboxclass" type="text" placeholder="Choose your mood" aria-label="Post" formControlName="emoji" required>
+          <option value="" selected disabled hidden>😀</option>
+          <option *ngFor="let emoji of emojis" [ngValue]="emoji.value">
+            {{ emoji.displayValue }}
+          </option>
+        </select>
+      </div>
       <div class="post-button">
           <button [disabled]="angForm.invalid" class="btn btn-outline-success my-2 my-sm-0" (click)="postMood()">Post </button >
-        </div>
-      <script type="text/javascript">
-        function swapImage(){
-          var image = document.getElementById("imageToSwap");
-          var dropd = document.getElementById("dlist");
-          image.src = dropd.value;
-        };
-      </script>
-
+      </div>
     </form>
   </div>
 </div>

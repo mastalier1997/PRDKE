@@ -104,9 +104,6 @@ export class PostServiceComponent implements OnInit {
       }, {
         displayValue: '😱',
         value: 'omg'
-      }, {
-        displayValue: '💩',
-        value: 'poop'
       },
       {
         displayValue: '😌',
@@ -118,10 +115,10 @@ export class PostServiceComponent implements OnInit {
         displayValue: '😏',
         value: 'smrik'
       }, {
-        displayValue: '😎',
+        displayValue: '💩',
         value: 'poop'
       }, {
-        displayValue: '💩',
+        displayValue: '😎',
         value: 'sunglasses'
       }, {
         displayValue: '🤔',
