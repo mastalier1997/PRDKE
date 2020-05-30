@@ -1,7 +1,10 @@
 /* Bordered form */
-html,
+
+
+
+/*html,
 body {
-  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  overflow-x: hidden;
 }
 
 body {
@@ -15,7 +18,7 @@ section{
 @media (max-width: 991.98px) {
   .offcanvas-collapse {
     position: fixed;
-    top: 56px; /* Height of navbar */
+    top: 56px;
     bottom: 0;
     left: 100%;
     width: 100%;
@@ -109,4 +112,26 @@ section{
 
 .title{
   color: white;
+}*/
+
+
+
+.container{
+  width: 50%;
+  padding: 10px;
+  border: 3px solid black;
+  margin: -5% auto auto;
 }
+
+.nav{
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.search{
+  float: right;
+  margin-right: 10%;
+  margin-top: -2%;
+}
+
+

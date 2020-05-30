@@ -31,6 +31,7 @@
     "angular-emoji": "^0.1.45",
     "elasticsearch": "^16.7.1",
     "mongodb-stitch-browser-sdk": "^4.8.0",
+    "multiple-select": "^1.5.2",
     "ng-emoji-picker": "^6.0.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
