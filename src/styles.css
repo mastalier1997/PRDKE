@@ -4,9 +4,10 @@
   margin-right: 15px;
 }
 
-#licence{
-  margin-top: 50px;
-  margin-left: 50px;
-}
 
+*{
+  background: #1F2833;
+  font-family: Verdana;
+  color: white;
+}
 

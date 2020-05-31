@@ -20,6 +20,7 @@
           <div *ngIf="angForm.controls['postText'].errors.required">Text required</div>
         </div>
       </div>
+      <div class="elements-down">
       <div id="popUpDiv" class="post-emojy">
         <select #emoji class="textboxclass" type="text" placeholder="Choose your mood" aria-label="Post" formControlName="emoji"  required>
           <option value="" selected disabled hidden>😀</option>
@@ -58,6 +59,7 @@
       </div>
       <div class="post-button">
           <button [disabled]="angForm.invalid" class="btn btn-outline-success my-2 my-sm-0" (click)="postMood()">Post </button >
+      </div>
       </div>
     </form>
   </div>
