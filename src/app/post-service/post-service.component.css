@@ -25,13 +25,21 @@
 .post-button{
   margin-left: 35%;
   margin-bottom: 5px;
+  border: none;
+  box-shadow: none;
+}
 
+.post-button :valid{
+  color: #66FCF1;
 }
 
 .post-button *{
   width: 50px;
   height: 30px;;
   font-size: large;
+  align-content: center;
+  border: none;
+  box-shadow: none;
 }
 
 .post-text{
@@ -40,27 +48,49 @@
 
 }
 .post-text *{
-  margin-top: 1%;
+  margin-top: 2%;
   margin-left: 1%;
   width: 100%;
   padding: 10px;
+  border: none;
+  box-shadow: none;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  background: #44576f;
+  outline: none;
 }
+
 
 .post-emojy {
   margin-left: 30%;
   margin-bottom: 5px;
+  padding: 5px;
 }
 
 .post-emojy * {
   width: 50px;
   height: 30px;
   font-size: large;
+  border: none;
+  box-shadow: none;
 }
 
 .elements-down{
   display: flex;
   margin-top: 2%;
 
+}
+
+#required{
+  background: #303e4f;
+}
+
+#required-text{
+  color: red;
+  border: 1px solid red;
+  font-size: small;
+  border: none;
+  background: #303e4f
 }
 
 

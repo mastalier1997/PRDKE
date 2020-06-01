@@ -1,3 +1,5 @@
+
+
 .timeline{
  margin-top: 15px;
 }
@@ -11,21 +13,44 @@
     "date emojy . text"
     ". . . text";
 
-  border: 3px solid red;
+  background: #3a4b5f;
+
   margin-bottom: 5px;
-  padding-left: 2px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .timeline-date{
   grid-area: date;
   font-size: small;
+  background: #3a4b5f;
+}
+
+.timeline-date *{
+  background: #3a4b5f;
+  align-items: center;
+  align-content: center;
 }
 
 .timeline-mood{
  grid-area: emojy;
+  background: #3a4b5f;
+}
+
+.timeline-mood * {
+  background: #3a4b5f;
+  align-items: center;
+  align-content: center;
 }
 
 .timeline-text{
   grid-area: text;
+  background: #3a4b5f;
+}
+
+.timeline-text *{
+  background: #3a4b5f;
+  align-items: center;
+  align-content: center;
 }
 

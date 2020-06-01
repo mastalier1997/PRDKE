@@ -6,7 +6,6 @@
 #myInput {
   padding: 10px;
   background-color: #303e4f;
-  font-family: "Courier New";
   border: none;
   outline: none;
   color: white;
@@ -22,7 +21,13 @@
   border: none;
   outline: none;
   padding: inherit;
+  margin-right: 3px;
 }
+
+#b1 :hover{
+  color: #66FCF1;
+}
+
 
 .dropdown {
 

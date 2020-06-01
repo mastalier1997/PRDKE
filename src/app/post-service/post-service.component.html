@@ -16,8 +16,8 @@
         <input #text id="postText" name="postText" class="form-control" type="text" placeholder="Write your Mood" aria-label="Post"
                formControlName="postText" required>
         <div *ngIf="angForm.controls['postText'].invalid && (angForm.controls['postText'].dirty
-        || angForm.controls['postText'].touched)" class="alert alert-danger">
-          <div *ngIf="angForm.controls['postText'].errors.required">Text required</div>
+        || angForm.controls['postText'].touched)" class="alert alert-danger" id="required">
+          <span *ngIf="angForm.controls['postText'].errors.required" id="required-text">Text required</span>
         </div>
       </div>
       <div class="elements-down">
