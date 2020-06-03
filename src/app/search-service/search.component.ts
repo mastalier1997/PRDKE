@@ -3,6 +3,7 @@ import {SearchService} from './search.service';
 import {User} from '../timeline/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpResponse} from '@angular/common/http';
+import {Mood} from '../timeline/mood';
 
 @Component({
   selector: 'app-search-service',
@@ -14,13 +15,13 @@ import {HttpResponse} from '@angular/common/http';
 export class SearchServiceComponent implements OnInit {
   isDivHidden = false;
   user: User;
+  mood: Mood[];
   angForm2 = this.fb.group({
     searchText: ['', Validators.required]
   });
 
   ngOnInit() {
-    this.getUser();
-    this.getObject();
+
   }
 
   constructor(private searchservice: SearchService, private fb: FormBuilder) { }
@@ -35,6 +36,15 @@ export class SearchServiceComponent implements OnInit {
   getObject() {
     return this.user;
   }
+
+  getMood() {
+    const moodText = this.angForm2.value.searchText;
+    console.log(this.angForm2.value, moodText);
+    this.searchservice.getElasticPostsResult(moodText).subscribe((data2: any) => {
+      this.mood = data2.hits.hits;
+    });
+  }
+
 
   changeVisibility() {
     this.isDivHidden = !this.isDivHidden;

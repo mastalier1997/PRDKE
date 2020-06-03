@@ -1,18 +1,25 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="dropdown">
-
-<form #formTest [formGroup]="angForm2" (ngSubmit)="getUser()"  class="form-inline my-5 my-lg-0">
-  <input id="myInput" name="searchText"formControlName = "search" class="form-control" type="string" placeholder="Search for user" aria-label="Post"
-         formControlName="searchText" >
-  <button id ="b1" class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="changeVisibility()" ng-disabled="someForm.$invalid">Search</button>
-</form>
-  <div id="myDropdown" class="dropdown-content" *ngIf="this.isDivHidden"><script>div.style.visibility = "visible";</script>
-    <p>Found user:</p>
-      <br><a id="a1">{{user?.username}}</a>
+  <div class="search-com">
+    <form #formTest [formGroup]="angForm2" (ngSubmit)="getUser(); getMood()"  class="form-inline my-5 my-lg-0">
+      <input id="myInput" name="searchText"formControlName = "search" type="string" placeholder="Search for user" aria-label="Post"
+             formControlName="searchText" >
+      <button id ="b1" class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="changeVisibility()" ng-disabled="someForm.$invalid"><i class="fa fa-search"></i></button>
+    </form>
   </div>
 </div>
 
+<div id="myDropdown" class="dropdown-content" *ngIf="this.isDivHidden"><script>div.style.visibility = "visible";</script>
+  <br><a id="a1">{{user?.username}}</a>
+  <div id="textSearch" *ngFor="let moodText of mood">
+    <br><a id="a2">{{moodText?.text}}</a>
+  </div>
+</div>
+
+
 <script>
+
 
 
   let submit = document.getElementById("b1");

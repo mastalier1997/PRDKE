@@ -4,38 +4,93 @@
   url("https://github.com/ChALkeR/Symbola-Emoji/blob/master/dist/Symbola-Emoji.ttf") format("ttf");
 }
 
+*{
+  background: #303e4f;
+  border-radius: 10px;
+}
+
 .emoji {
   font-family: "Symbola"
 }
 
-.post{
-  background: black;
-  height: 100px;
+::placeholder{
+  color: white;
 }
 
 .post-form{
+  background: white;
   float: bottom;
 }
 
 .post-button{
-  margin-top: 1em;
-  margin-left: 59em;
+  margin-left: 35%;
+  margin-bottom: 5px;
+  border: none;
+  box-shadow: none;
+}
+
+.post-button :valid{
+  color: #66FCF1;
 }
 
 .post-button *{
-
+  width: 50px;
+  height: 30px;;
+  font-size: large;
+  align-content: center;
+  border: none;
+  box-shadow: none;
 }
 
 .post-text{
-  width: 100%;
+  width: 50%;
+  margin: auto;
+
 }
 .post-text *{
- width: 100%;
+  margin-top: 2%;
+  margin-left: 1%;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  box-shadow: none;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  background: #44576f;
+  outline: none;
 }
 
+
 .post-emojy {
-  margin-top: 1.2em;
-  margin-left: 1.5em;
+  margin-left: 30%;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.post-emojy * {
+  width: 50px;
+  height: 30px;
+  font-size: large;
+  border: none;
+  box-shadow: none;
+}
+
+.elements-down{
+  display: flex;
+  margin-top: 2%;
+
+}
+
+#required{
+  background: #303e4f;
+}
+
+#required-text{
+  color: red;
+  border: 1px solid red;
+  font-size: small;
+  border: none;
+  background: #303e4f
 }
 
 
