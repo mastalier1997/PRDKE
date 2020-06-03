@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ThemeVariables, ThemeRef, lyl, StyleRenderer } from '@alyle/ui';
+import {Router} from '@angular/router';
 
 const STYLES = (theme: ThemeVariables, ref: ThemeRef) => {
   const __ = ref.selectorsOf(STYLES);
@@ -30,8 +31,11 @@ export class AppComponent {
 
   title = 'Moods';
 
-  constructor(readonly sRenderer: StyleRenderer) { }
+  constructor(readonly sRenderer: StyleRenderer, private router: Router ) { }
 
+  goToProfile() {
+    this.router.navigate(['/profile']);
+  }
 
 
 }

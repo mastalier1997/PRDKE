@@ -54,7 +54,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     PickerModule,
-    EmojiModule
+    EmojiModule,
 
   ],
   exports: [ RouterModule ],
