@@ -20,6 +20,7 @@ import {NgSelectModule} from '@ng-select/ng-select';
 import {SearchServiceComponent} from './search-service/search.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import {EmojiModule} from '@ctrl/ngx-emoji-mart/ngx-emoji';
+import {ProfileComponent} from './profile/profile.component';
 
 
 
@@ -32,7 +33,8 @@ const routes: Routes = [
     AppComponent,
     TimelineComponent,
     PostServiceComponent,
-    SearchServiceComponent
+    SearchServiceComponent,
+    ProfileComponent
 
   ],
   imports: [
