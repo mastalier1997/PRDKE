@@ -1,9 +1,15 @@
+#profile-div{
+  width: 50%;
+  margin: 1% auto auto;
+}
+
+.row{
+}
+
 .twPc-div {
   background: #fff none repeat scroll 0 0;
   border: 1px solid #e1e8ed;
   border-radius: 6px;
-  height:100%;
-width: 100%;
 }
 .twPc-bg {
   background-image: url("https://pbs.twimg.com/profile_banners/50988711/1384539792/600x200");

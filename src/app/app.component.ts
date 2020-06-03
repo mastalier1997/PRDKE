@@ -33,10 +33,19 @@ export class AppComponent {
 
   constructor(readonly sRenderer: StyleRenderer, private router: Router ) { }
 
-  goToProfile() {
-    this.router.navigate(['/profile']);
+  checkUrl() {
+    if (this.router.url.includes('profile')) {
+      return false;
+    }
+    return true;
   }
 
+  checkUrl2() {
+    if (this.router.url.includes('profile')) {
+      return true;
+    }
+    return false;
+  }
 
 }
 

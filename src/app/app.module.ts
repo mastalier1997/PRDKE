@@ -26,7 +26,8 @@ import {ProfileComponent} from './profile/profile.component';
 
 const routes: Routes = [
   { path: 'timeline', component: TimelineComponent },
-  { path: 'profile', component: ProfileComponent}// Add this
+  { path: 'profile', component: ProfileComponent},
+  {path: 'home', component: TimelineComponent }
 ];
 
 @NgModule({
