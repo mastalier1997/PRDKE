@@ -25,7 +25,8 @@ import {ProfileComponent} from './profile/profile.component';
 
 
 const routes: Routes = [
-  { path: 'timeline', component: TimelineComponent }           // Add this
+  { path: 'timeline', component: TimelineComponent },
+  { path: 'profile', component: ProfileComponent}// Add this
 ];
 
 @NgModule({
@@ -46,7 +47,7 @@ const routes: Routes = [
       cookieName: 'My-Xsrf-Cookie',
       headerName: 'My-Xsrf-Header',
     }),
-    RouterModule,
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     HammerModule,
     NgSelectModule,
@@ -56,6 +57,7 @@ const routes: Routes = [
     EmojiModule
 
   ],
+  exports: [ RouterModule ],
   providers: [
     HttpErrorHandler,
     MessageService,
