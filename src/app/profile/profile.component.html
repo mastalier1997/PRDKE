@@ -1,67 +1,51 @@
-<head>
-  <link rel="stylesheet" type="text/css" href="profile.component.css">
-</head>
-<div id="profile-div">
+<div class="container" id="profile-div">
   <div class="row">
 
     <!-- code start -->
     <div class="twPc-div">
 
 
-      <div>
-        <div class="twPc-button">
+      <div class="profile-content">
+
+        <div class="follow-button">
           <button href="#" >Follow </button>
-
-
         </div>
 
-        <a title="Name"  class="twPc-avatarLink">
+        <a title="Name"  class="avatar">
           <img  class="twPc-avatarImg" src="https://upload.wikimedia.org/wikipedia/commons/1/12/User_icon_2.svg">
         </a>
 
         <div class="twPc-divUser">
           <div class="twPc-divName">
-            <a href="#">Name</a>
+            <p href="#">Name</p>
           </div>
           <span>
-				<a href="#">@<span>username</span></a>
-			</span>
+				<p >@<span>username</span></p>
+          </span>
         </div>
 
         <div class="twPc-divStats">
           <ul class="twPc-Arrange">
-            <li class="twPc-ArrangeSizeFit">
-              <a href="#" title="9 moods">
-                <span class="twPc-StatLabel twPc-block">Moods</span>
-                <span class="twPc-StatValue">9</span>
-              </a>
-            </li>
-            <li class="twPc-ArrangeSizeFit">
-              <a href="#" title="8 Following">
-                <span class="twPc-StatLabel twPc-block">Following</span>
-                <span class="twPc-StatValue">8</span>
-              </a>
-            </li>
-            <li class="twPc-ArrangeSizeFit">
-              <a href="#" title="10 Followers">
-                <span class="twPc-StatLabel twPc-block">Followers</span>
-                <span class="twPc-StatValue">10</span>
-              </a>
-            </li>
+            <a href="#" title="8 Following">
+              <span class="twPc-StatLabel twPc-block">Following </span>
+              <span class="twPc-StatValue">8</span>
+            </a>
+            <a href="#" title="10 Followers">
+              <span class="twPc-StatLabel twPc-block">Followers </span>
+              <span class="twPc-StatValue">10</span>
+            </a>
           </ul>
         </div>
-        <div >Posts</div>
-
-
-
-
-
       </div>
     </div>
     <!-- code end -->
   </div>
   <app-timeline></app-timeline>
-
 </div>
 <router-outlet></router-outlet>
+<div id="footer">
+  <footer>
+    <p id="license">Icons made by <a href="https://emojiisland.com/pages/download-new-emoji-icons-in-png-ios-10">Emoji Island</a></p>
+  </footer>
+</div>
 

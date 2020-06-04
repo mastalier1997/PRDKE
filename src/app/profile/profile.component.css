@@ -4,13 +4,51 @@
 }
 
 .row{
+  display: inline-flex;
+  border: 3px solid red;
+  width: 100%;
+}
+.row *{
+  width: 99%;
+  margin: auto;
 }
 
-.twPc-div {
+.profile-content{
+  border: 3px solid yellow;
+}
+
+.follow-button{
+
+}
+.follow-button *{
+  width: auto;
+  float: right;
+}
+
+.avatar{
+  width: 8%;
+}
+
+.avatar *{
+  width: 10%;
+}
+
+#footer{
+  margin-top: 2em;
+  margin-left: 10px;
+}
+
+
+#license{
+  font-size: smaller;
+}
+
+/*.twPc-div {
   background: #fff none repeat scroll 0 0;
   border: 1px solid #e1e8ed;
   border-radius: 6px;
 }
+
 .twPc-bg {
   background-image: url("https://pbs.twimg.com/profile_banners/50988711/1384539792/600x200");
   background-position: 0 50%;
@@ -96,5 +134,5 @@ ul.twPc-Arrange {
   overflow: hidden;
   text-transform: uppercase;
   transition: color 0.15s ease-in-out 0s;
-}
+}*/
 
