@@ -1,36 +1,59 @@
+
 #profile-div{
   width: 50%;
   margin: 1% auto auto;
+
 }
 
 .row{
   display: inline-flex;
-  border: 3px solid red;
   width: 100%;
+  padding-bottom: 10px;
+  background: #303e4f;
+  border-radius: 10px;
 }
 .row *{
   width: 99%;
   margin: auto;
+  background: #303e4f;
 }
 
 .profile-content{
-  border: 3px solid yellow;
+  background: #303e4f;
 }
 
-.follow-button{
-
+#follow-button2{
+  border-radius: 90px;
+  border: 1px solid #66FCF1;
+  padding: 7px;
 }
+
 .follow-button *{
   width: auto;
   float: right;
+  margin-top: 1%;
+  margin-left: 1%;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  font-size: 15px;
+}
+
+.follow-button :hover{
+  color: #66FCF1;
 }
 
 .avatar{
-  width: 8%;
+  margin: 3px;
+  width: 7%;
+  background: #303e4f;
 }
 
 .avatar *{
-  width: 10%;
+  margin: 3px;
+  width: 7%;
+  height: 7%;
+  background: #303e4f;
 }
 
 #footer{
@@ -41,6 +64,60 @@
 
 #license{
   font-size: smaller;
+}
+
+.user{
+  padding-bottom: 10px;
+  background: #303e4f;
+}
+
+.follow{
+  margin-bottom: 5px;
+  background: #303e4f;
+}
+
+.user-name{
+  font-weight: bold;
+  font-size: large;
+}
+
+.username{
+  font-size: smaller;
+}
+
+.username *{
+  color: #bfbfbf;
+}
+
+.stats {
+
+}
+
+.follow{
+  outline: none;
+  text-decoration: none;
+}
+
+#following{
+  margin-left: 1%;
+  outline: none;
+}
+
+#following-value{
+  margin-right: 5px;
+}
+
+#followers{
+  margin-left: 25px;
+}
+
+#followers-value{
+  margin-right: 5px;
+}
+
+.follow-word{
+  margin-left: 5px;
+  color: #bfbfbf;
 }
 
 /*.twPc-div {
