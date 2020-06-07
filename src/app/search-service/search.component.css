@@ -53,6 +53,14 @@
   display: block;
 }
 
-
+#userSearch {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border-style: solid;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+border-color: white;
+}
 
 

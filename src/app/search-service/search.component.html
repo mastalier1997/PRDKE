@@ -11,9 +11,11 @@
 </div>
 
 <div id="myDropdown" class="dropdown-content" *ngIf="this.isDivHidden"><script>div.style.visibility = "visible";</script>
-  <br><a id="a1">{{user?.username}}</a>
+  <div id="userSearch">
+  <br><a routerLink="profile" id="a1">{{user?.username}}</a>
+  </div>
   <div id="textSearch" *ngFor="let moodText of mood">
-    <br><a id="a2">{{moodText?.text}}</a>
+    <br><a id="a2">{{moodText['_source']?.text}}</a>
   </div>
 </div>
 
