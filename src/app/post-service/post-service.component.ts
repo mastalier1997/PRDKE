@@ -170,7 +170,7 @@ export class PostServiceComponent implements OnInit {
   postMood(): void {
     const emoji = this.angForm.get('emoji').value;
     const text = this.angForm.get('postText').value;
-    this.postService.postMoods(emoji, text);
+    this.postService.postUserMoods(emoji, text);
     // Call to reset the form values
     this.angForm.get('postText').reset();
 
@@ -178,10 +178,11 @@ export class PostServiceComponent implements OnInit {
       return new Promise( resolve => setTimeout(resolve, ms) );
     }
 
+    /*
     (async () => {
       await delay(300);
       location.reload();
-    })();
+    })();*/
   }
 
   addEmoji($event) {

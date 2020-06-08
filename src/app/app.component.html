@@ -21,13 +21,8 @@
     <app-search-service></app-search-service>
   </div>
 
-  <div class="container" *ngIf="checkUrl()">
-
-    <!-- Posten -->
-    <app-post-service></app-post-service>
-
-    <!-- Timeline -->
-    <app-timeline></app-timeline>
+  <div class="container">
+    <router-outlet></router-outlet>
   </div>
 
   <div id="footer" *ngIf="checkUrl()">
@@ -40,4 +35,3 @@
 </body>
 
 
-<router-outlet></router-outlet>

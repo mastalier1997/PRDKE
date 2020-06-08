@@ -21,14 +21,18 @@ import {SearchServiceComponent} from './search-service/search.component';
 import { PickerModule } from '@ctrl/ngx-emoji-mart';
 import {EmojiModule} from '@ctrl/ngx-emoji-mart/ngx-emoji';
 import {ProfileComponent} from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {AppRoutingModule} from './app-routing.module';
+import { SpaComponent } from './spa/spa.component';
 
 
-
+/*
 const routes: Routes = [
   { path: 'timeline', component: TimelineComponent },
   { path: 'profile', component: ProfileComponent},
   {path: 'home', component: TimelineComponent }
-];
+];*/
 
 @NgModule({
   declarations: [
@@ -36,11 +40,15 @@ const routes: Routes = [
     TimelineComponent,
     PostServiceComponent,
     SearchServiceComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    RegisterComponent,
+    SpaComponent
 
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     NgbModule,
 
     HttpClientModule,
@@ -48,7 +56,7 @@ const routes: Routes = [
       cookieName: 'My-Xsrf-Cookie',
       headerName: 'My-Xsrf-Header',
     }),
-    RouterModule.forRoot(routes),
+    // RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     HammerModule,
     NgSelectModule,
@@ -70,4 +78,3 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-export class AppRoutingModule { }
