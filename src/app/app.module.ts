@@ -25,6 +25,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {AppRoutingModule} from './app-routing.module';
 import { SpaComponent } from './spa/spa.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 /*
@@ -43,7 +44,8 @@ const routes: Routes = [
     ProfileComponent,
     LoginComponent,
     RegisterComponent,
-    SpaComponent
+    SpaComponent,
+    LogoutComponent
 
   ],
   imports: [

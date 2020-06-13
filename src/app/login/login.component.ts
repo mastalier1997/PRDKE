@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['/spa'] || '/';
 
     // show success message on login
-    if (this.route.snapshot.queryParams['login']) {
+    if (this.route.snapshot.queryParams['/login']) {
       this.success = 'Login successful';
     }
   }

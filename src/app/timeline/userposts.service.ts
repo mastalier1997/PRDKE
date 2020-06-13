@@ -43,10 +43,6 @@ export class UserpostsService {
       );
   }
 
-  getAuthorization(): string {
-
-    return 'Basic ' + 'Basic bHVrYXMuYmlya2xiYXVlckBnbWFpbC5jb206VGVzdDAxIQ=='; // BSON.Binary.fromText('MyUser:Mypassw0rd').toBase64();
-  }
 
   getUserMoods() {
 // 1. Instantiate an HTTP Service Client

@@ -178,11 +178,11 @@ export class PostServiceComponent implements OnInit {
       return new Promise( resolve => setTimeout(resolve, ms) );
     }
 
-    /*
+
     (async () => {
-      await delay(300);
+      await delay(500);
       location.reload();
-    })();*/
+    })();
   }
 
   addEmoji($event) {

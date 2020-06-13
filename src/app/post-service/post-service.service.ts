@@ -67,11 +67,15 @@ export class PostServiceService {
     const app = Stitch.defaultAppClient;
     const http = app.getServiceClient(HttpServiceClient.factory, 'postPosts');
 
+    const userName = localStorage.getItem('username');
+    const userId = localStorage.getItem('userId');
+
+
     // 2. Build a new HttpRequest
     const request = new HttpRequest.Builder()
       .withMethod(HttpMethod.POST)
-      .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postUserMood')
-      .withBody( '{"emoji":"' + emoji + '","text":"' + text + '","userID":"' + userID + '"}')
+      .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood')
+      .withBody( '{"emoji":"' + emoji + '","text":"' + text + '","userId":"' + userId + '","username":"' + userName + '"}')
       .build();
 
     // 3. Execute the built request

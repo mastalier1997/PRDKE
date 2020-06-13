@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
-import {catchError, map} from 'rxjs/operators';
+import {catchError, delay, map} from 'rxjs/operators';
 
 import { Mood } from './mood';
 import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
@@ -11,7 +11,7 @@ import {User} from './user';
 import {MoodDate} from './moodDate';
 import {Timestamp} from './timestamp';
 import {Stitch} from 'mongodb-stitch-browser-sdk';
-import {HttpMethod, HttpRequest, HttpServiceClient} from 'mongodb-stitch-browser-services-http';
+import {HttpMethod, HttpRequest, HttpResponse, HttpServiceClient} from 'mongodb-stitch-browser-services-http';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -41,23 +41,32 @@ export class TimelineService {
       );
   }
 
-  async getMoods(): Promise<any> {
-// 1. Instantiate an HTTP Service Client
+  async getMoods(): Promise<Mood[]> {
+    // 1. Instantiate an HTTP Service Client
     const app = Stitch.defaultAppClient;
     const http = app.getServiceClient(HttpServiceClient.factory, 'getPosts');
 
-// 2. Build a new HttpRequest
+    // 2. Build a new HttpRequest
     const request = new HttpRequest.Builder()
       .withMethod(HttpMethod.GET)
       .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/getPosts/incoming_webhook/getAllPosts')
       .build();
 
-// 3. Execute the built request
-    return await http.execute(request)
-      .then(result => (console.log(result)))
+      // 3. Execute the built request
+    await http.execute(request).then((result) => { console.log(result); return result; })
+      /* .then(result => {
+        (async () => {
+          await delay(5000);
+          console.log(result);
+          console.log('soomeeethin');
+          return result;
+        })();
+        // console.log(result);
+        })*/
       .catch(console.error);
+
+
+    return null;
   }
-
-
 
 }

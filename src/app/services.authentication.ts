@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import {User} from './timeline/user';
 import {Stitch, UserPasswordCredential} from 'mongodb-stitch-browser-sdk';
 import {RemoteMongoClient} from 'mongodb-stitch';
+import {Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, ActivatedRoute} from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,33 +18,47 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute,) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
   public get currentUserValue(): User {
+    /*if (localStorage.getItem('userMail') != null) {
+      this.login(localStorage.getItem('userMail'), localStorage.getItem('userpw'));
+    } else {
+      return null;
+    }*/
     return this.currentUserSubject.value;
   }
 
   login(email, password) {
 
-    const stitchAppClient = Stitch.initializeDefaultAppClient('moods-unbhh');
+    let stitchAppClient = null;
+
+    // if (Stitch.defaultAppClient) {
+    stitchAppClient = Stitch.initializeDefaultAppClient('moods-unbhh');
+    // } else {
+      // stitchAppClient = Stitch.defaultAppClient;
+    // }
 
     return stitchAppClient.auth
       .loginWithCredential(new UserPasswordCredential(email, password))
       .then((user) => {
-        console.log(`Logged in as user with id: ${user.id}`);
-        localStorage.setItem('currentUserMail', JSON.stringify(email));
-        /* const mongoClient = stitchAppClient.getServiceClient(
-          RemoteMongoClient.factory,
-          'mongodb-atlas'
-        );
-        const items = mongoClient.db("todo").collection("items");*/
 
-        return email;
+        console.log(`Logged in as user with id: ${user.id}`);
+        // localStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem('userId', `${user.id}`); // JSON.stringify(email));
+        localStorage.setItem('username', email); // JSON.stringify(email));
+        localStorage.setItem('userMail', email);
+        localStorage.setItem('userpw', password);
+        this.router.navigate([this.route.snapshot.queryParams['/spa'] || '/']);
+
       })
-      .catch(console.error);
+      .catch((reason) => {
+        console.log('error');
+        this.router.navigate([this.route.snapshot.queryParams['/login'] || '/']);
+      } );
 
     /*return this.http.post<any>('https://workoutplanerapi.azurewebsites.net/Token', 'grant_type=password&username=' + email + '&password=' + password, httpOptions)
       .pipe(map(user => {

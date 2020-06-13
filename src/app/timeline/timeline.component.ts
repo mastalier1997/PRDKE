@@ -3,6 +3,8 @@ import {TimelineService} from './timeline.service';
 import {Mood} from './mood';
 import {UserpostsService} from './userposts.service';
 import {delay} from 'rxjs/operators';
+import {Stitch} from 'mongodb-stitch-browser-sdk';
+import {HttpMethod, HttpRequest, HttpServiceClient} from 'mongodb-stitch-browser-services-http';
 
 @Component({
   selector: 'app-timeline',
@@ -16,13 +18,14 @@ export class TimelineComponent implements OnInit {
   constructor(private timelineService: TimelineService, private userpostsService: UserpostsService) {}
 
   ngOnInit() {
-    this.getMoods(true);
+    this.getMoods(false);
   }
 
-  getMoods(all) {
+  async getMoods(all) {
     if (all) {
 
-      this.timelineService.getMoods().then(result => {console.log(result); } );
+      /*const result = this.getMoodsData(); // this.timelineService.getMoods();
+      console.log(result);
 
       /*(async () => {
         const result = this.timelineService.getMoods();
@@ -31,11 +34,13 @@ export class TimelineComponent implements OnInit {
         }
       })();*/
 
-      /* this.timelineService.getAllMoods()
-        .subscribe(moods => (this.moods = moods)); */
+      this.timelineService.getAllMoods()
+        .subscribe(moods => (this.moods = moods));
     } else {
-      this.userpostsService.getUserMoods();
+      this.moods = await this.timelineService.getMoods();
+      // this.userpostsService.getUserMoods();
     }
 
   }
+
 }
