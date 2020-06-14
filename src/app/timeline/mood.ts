@@ -7,5 +7,6 @@ export interface Mood {
   emoji: string;
   text: string;
   userID: User;
+  username: string;
   timestamp: Timestamp;
 }
