@@ -5,7 +5,7 @@
     <div class="twPc-div">
 
 
-      <div class="profile-content">
+      <div class="profile-content" *ngIf="user">
 
         <div class="follow-button">
           <div id="follow-button2">
@@ -14,15 +14,15 @@
         </div>
 
         <a title="Name"  class="avatar">
-          <img  class="twPc-avatarImg" src="https://upload.wikimedia.org/wikipedia/commons/1/12/User_icon_2.svg">
+          <img class="twPc-avatarImg" src="https://upload.wikimedia.org/wikipedia/commons/1/12/User_icon_2.svg">
         </a>
 
         <div class="user">
           <div class="user-name">
-            <p>Elon Musk</p>
+            <p>{{user.username}}</p>
           </div>
           <div class="username">
-				    <p>@<span>elonmusk</span></p>
+				    <p>@<span>{{user.username}}</span></p>
           </div>
         </div>
 
@@ -40,9 +40,33 @@
     </div>
     <!-- code end -->
   </div>
-  <app-timeline></app-timeline>
+  <div class="timeline" >
+    <!--<h6 class="border-bottom border-gray pb-2 mb-0">{{post.timestamp}}</h6>-->
+    <div class="timeline-content" *ngFor="let post of moods">
+      <div class="timeline-date">
+        <p class="pb-3 mb-0 small lh-125 " id="postDate">{{post.timestamp.$date.$numberLong | date}}</p>
+      </div>
+      <div class="timeline-mood">
+        <img class="bd-placeholder-img mr-2 rounded" width="32" height="32" src="assets/emoticons/png/{{post.emoji}}.png" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 32x32">
+      </div>
+      <div class="timeline-text">
+        <div class="timeline-text-oid">
+          <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@{{post.username}}</strong>
+          </p>
+        </div>
+        <div class="timeline-text-text">
+          <p>
+            {{post.text}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
-<router-outlet></router-outlet>
 <div id="footer">
   <footer>
     <p id="license">Icons made by <a href="https://emojiisland.com/pages/download-new-emoji-icons-in-png-ios-10">Emoji Island</a></p>

@@ -27,7 +27,6 @@ import {AppRoutingModule} from './app-routing.module';
 import { SpaComponent } from './spa/spa.component';
 import { LogoutComponent } from './logout/logout.component';
 
-
 /*
 const routes: Routes = [
   { path: 'timeline', component: TimelineComponent },

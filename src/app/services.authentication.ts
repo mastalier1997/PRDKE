@@ -18,7 +18,7 @@ export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
-  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute,) {
+  constructor(private http: HttpClient, private router: Router, private route: ActivatedRoute) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -36,11 +36,12 @@ export class AuthenticationService {
 
     let stitchAppClient = null;
 
-    // if (Stitch.defaultAppClient) {
+    try {
     stitchAppClient = Stitch.initializeDefaultAppClient('moods-unbhh');
-    // } else {
-      // stitchAppClient = Stitch.defaultAppClient;
-    // }
+    } catch (e) {
+      console.log(e);
+      stitchAppClient = Stitch.defaultAppClient;
+    }
 
     return stitchAppClient.auth
       .loginWithCredential(new UserPasswordCredential(email, password))
@@ -57,7 +58,8 @@ export class AuthenticationService {
       })
       .catch((reason) => {
         console.log('error');
-        this.router.navigate([this.route.snapshot.queryParams['/login'] || '/']);
+        // this.router.navigate([this.route.snapshot.queryParams['/login'] || '/']);
+        location.reload();
       } );
 
     /*return this.http.post<any>('https://workoutplanerapi.azurewebsites.net/Token', 'grant_type=password&username=' + email + '&password=' + password, httpOptions)

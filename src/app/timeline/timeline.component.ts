@@ -18,7 +18,7 @@ export class TimelineComponent implements OnInit {
   constructor(private timelineService: TimelineService, private userpostsService: UserpostsService) {}
 
   ngOnInit() {
-    this.getMoods(false);
+    this.getMoods(true);
   }
 
   async getMoods(all) {
@@ -35,7 +35,7 @@ export class TimelineComponent implements OnInit {
       })();*/
 
       this.timelineService.getAllMoods()
-        .subscribe(moods => (this.moods = moods));
+        .subscribe(moods => { console.log(moods); this.moods = moods; });
     } else {
       this.moods = await this.timelineService.getMoods();
       // this.userpostsService.getUserMoods();

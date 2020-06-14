@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from './user.service';
+import {Mood} from '../timeline/mood';
+import {User} from '../timeline/user';
 
 @Component({
   selector: 'app-profile',
@@ -9,11 +11,16 @@ import {UserService} from './user.service';
 })
 export class ProfileComponent implements OnInit {
 
+  moods: Mood[];
+  user: User;
+
   constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
     console.log('test');
-    this.userService.getUserData();
+    this.user = await this.userService.getUserData();
+    this.moods = await this.userService.getUserPosts();
+
   }
 
 }

@@ -53,7 +53,11 @@ export class TimelineService {
       .build();
 
       // 3. Execute the built request
-    await http.execute(request).then((result) => { console.log(result); return result; })
+    await http.execute(request).then((result) => {
+      const obj: Mood[] = JSON.parse(result.body.toString());
+      console.log(obj);
+      return obj;
+    })
       /* .then(result => {
         (async () => {
           await delay(5000);

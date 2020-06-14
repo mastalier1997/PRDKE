@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: '', component: SpaComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'timeline', component: SpaComponent },
-  { path: 'profile', component: ProfileComponent},
+  { path: 'timeline', component: SpaComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'home', component: SpaComponent },
 
   // otherwise redirect to login

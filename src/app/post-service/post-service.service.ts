@@ -33,19 +33,6 @@ export class PostServiceService {
   /** POST Moods to the server */
   postMoods(emoji, text) {
 
-    /*const body = new HttpParams()
-      .set('emoji', emoji)
-      .set('text', text)
-      .set('userID', userID)
-      .set('timestamp', String(Date.now()));
-
-    const req = {
-      emoji,
-      text,
-      userID,
-      timeStamp: Date.now(),
-    };*/
-
     const config = new HttpHeaders().set('Content-Type', 'application/json')
       .set('Accept', 'application/json');
 
