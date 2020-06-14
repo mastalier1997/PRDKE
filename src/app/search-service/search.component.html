@@ -15,7 +15,7 @@
   <br><a routerLink="profile" id="a1">{{user?.username}}</a>
   </div>
   <div id="textSearch" *ngFor="let moodText of mood">
-    <br><a id="a2">{{moodText['_source']?.text}}</a>
+    <br><a routerLink="profile" id="a2">{{moodText['_source']?.text}}</a>
   </div>
 </div>
 
