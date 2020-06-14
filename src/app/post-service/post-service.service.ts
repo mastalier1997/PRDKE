@@ -36,10 +36,10 @@ export class PostServiceService {
     const config = new HttpHeaders().set('Content-Type', 'application/json')
       .set('Accept', 'application/json');
 
-    this.http.post<any>(this.postMoodUrl, '{"emoji":"' + emoji + '","text":"' + text + '","userID":"' + userID
+    /*this.http.post<any>(this.postMoodUrl, '{"emoji":"' + emoji + '","text":"' + text + '","userID":"' + userID
       + '"}', httpOptions).subscribe();
     // this.http.post<any>(this.postElasticUrl,  body.toString(), httpOptions).subscribe();
-    // this.http.post<any>(this.postElasticUrl, body, httpOptions).subscribe();
+    // this.http.post<any>(this.postElasticUrl, body, httpOptions).subscribe();*/
     this.http.post<any>(this.postElasticUrl, '{\n' +
       '    "emoji": "' + emoji + '",\n' +
       '    "text": "' + text + '",\n' +
@@ -64,6 +64,14 @@ export class PostServiceService {
       .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood')
       .withBody( '{"emoji":"' + emoji + '","text":"' + text + '","userId":"' + userId + '","username":"' + userName + '"}')
       .build();
+
+    const request1 = new HttpRequest.Builder()
+      .withMethod(HttpMethod.POST)
+      .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood')
+      .withBody( '{"emoji":"' + emoji + '","text":"' + text + '","userId":"' + userId + '","username":"' + userName + '"}')
+      .build();
+
+    this.postMoods(emoji, text);
 
     // 3. Execute the built request
     return http.execute(request)
