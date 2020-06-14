@@ -41,10 +41,10 @@ export class AppComponent {
   }
 
   checkUrl2() {
-    if (this.router.url.includes('profile')) {
-      return true;
+    if (this.router.url.includes('login') || this.router.url.includes('register')) {
+      return false;
     }
-    return false;
+    return true;
   }
 
 }

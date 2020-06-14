@@ -1,0 +1,88 @@
+
+
+#login-title{
+ margin-left: 50%;
+}
+
+#login-content{
+  margin-left: 37.5%;
+
+}
+
+.form-group{
+  width: 50%;
+  background: #303e4f;
+  border-radius: 5px;
+}
+
+#username{
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#mail{
+  margin-right: 100%;
+  font-size: small;
+  background: #303e4f;
+}
+
+#email{
+  margin-top: 3px;
+  width: 99%;
+  outline: none;
+  border: none;
+  background: #303e4f;
+}
+
+#passw{
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+#pass{
+  margin-right: 100%;
+  font-size: small;
+  background: #303e4f;
+}
+
+#password{
+  margin-top: 3px;
+  width: 99%;
+  outline: none;
+  border: none;
+  background: #303e4f;
+}
+
+#buttons{
+  margin-top: 3%;
+  background: none;
+}
+
+#login-button{
+  width: 105%;
+  height: 2%;
+  align-content: center;
+  align-items: center;
+  background: #66FCF1;
+  font-size: large;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.invalid-feedback *{
+  background: #303e4f;
+  font-size: smaller;
+  color: red;
+}
+
+#register-link{
+  margin-left: 46%;
+  font-size: small;
+  text-decoration: none;
+}
+
+
+

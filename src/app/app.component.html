@@ -4,7 +4,7 @@
 <!-- Moods Main -->
 <div class="content">
 
-  <div class="nav">
+  <div class="nav" *ngIf="checkUrl2()">
     <div class="nav-text">
       <a class="nav-link" routerLink="/spa" routerLinkActive="active">Home</a>
     </div>
@@ -20,7 +20,7 @@
       <a class="nav-link" ><app-logout></app-logout></a>
     </div>
   </div>
-  <div class="search">
+  <div class="search" *ngIf="checkUrl2()">
     <app-search-service></app-search-service>
   </div>
 
@@ -28,7 +28,7 @@
     <router-outlet></router-outlet>
   </div>
 
-  <div id="footer" *ngIf="checkUrl()">
+  <div id="footer" *ngIf="checkUrl() && checkUrl2()">
     <footer>
       <p id="license">Icons made by <a href="https://emojiisland.com/pages/download-new-emoji-icons-in-png-ios-10">Emoji Island</a></p>
     </footer>
