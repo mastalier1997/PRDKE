@@ -7,6 +7,8 @@ import {AuthenticationService} from '../services.authentication';
 import {UserService} from '../profile/user.service';
 import {AlertService} from '../services.alert';
 import {RegisterService} from './register.service';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HandleError, HttpErrorHandler} from '../http-error-handler.service';
 
 
 
@@ -20,7 +22,10 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
   submitted = false;
+  postElasticUrl = 'http://34.65.38.205:9200/users/_doc';
 
+
+  private handleError: HandleError;
 
   constructor( private formBuilder: FormBuilder,
                private router: Router,
@@ -28,8 +33,12 @@ export class RegisterComponent implements OnInit {
                private userService: UserService,
                private alertService: AlertService,
                private route: ActivatedRoute,
-               private registerService: RegisterService) {
-        // redirect to home if already logged in
+               private registerService: RegisterService,
+               private http: HttpClient,
+               httpErrorHandler: HttpErrorHandler) {
+    this.handleError = httpErrorHandler.createHandleError('TimelineService');
+
+    // redirect to home if already logged in
         /*if (this.authenticationService.currentUserValue) {
           this.router.navigate(['/spa']);
     }*/
@@ -64,15 +73,22 @@ export class RegisterComponent implements OnInit {
 
 
   async registerUser(email, password, username) {
+    this.postElasticUrl = 'http://34.65.38.205:9200/users/_doc';
 
     let stitchAppClient;
-
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
     try {
       stitchAppClient = Stitch.initializeDefaultAppClient('moods-unbhh');
     } catch (e) {
       console.log(e);
       stitchAppClient = Stitch.defaultAppClient;
     }
+// Vorname & Nachname fehlt noch
+
 
     const emailPasswordClient = stitchAppClient.auth
       .getProviderClient(UserPasswordAuthProviderClient.factory);
@@ -81,6 +97,12 @@ export class RegisterComponent implements OnInit {
       .then(() => {
         console.log('Successfully sent account confirmation email!');
         // this.registerService.register(email, password);
+        this.http.post<any>(this.postElasticUrl, '{\n' +
+          '    "firstName": "' + 'null' + '",\n' +
+          '    "lastName": "' + 'null' + '",\n' +
+          '    "username": "' + email + '",\n' +
+          '    "password": "' + password + '"\n' +
+          '  }', httpOptions).subscribe();
         this.router.navigate([this.route.snapshot.queryParams['/login'] || '/']);
       })
       .catch(err => console.error('Error registering new user:', err));
