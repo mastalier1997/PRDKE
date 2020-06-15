@@ -8,10 +8,10 @@
       <div class="row justify-content-md-center">
         <div class="col-md-auto">
 
-          <h2>Registrierung</h2>
-          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-            <div class="form-group">
-              <label for="username">Username</label>
+          <h2 id="reg-title">Register</h2>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" id="reg-content">
+            <div class="form-group" id="username-div">
+              <label for="username" id="u-label">Username</label>
               <input id="username" type="username" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">Username eingeben</div>
@@ -20,8 +20,8 @@
             </div>
             <!--  <div ngModelGroup="passwordGroup"-->
             <!--       [class.has-error]="confirmPassword.touched && confirmPassword.invalid && !confirmPassword.required()">-->
-            <div class="form-group">
-              <label for="password">Passwort</label>
+            <div class="form-group" id="password-div">
+              <label for="password" id="p-label">Password</label>
               <input id='password' type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
               <!--    <input id='password' type="password" formControlName="password" class="form-control" (input)='confirmPassword.control.updateValueAndValidity()' [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />-->
               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
@@ -29,8 +29,8 @@
                 <div *ngIf="f.password.errors.touched && f.password.errors.minlength">Passwort muss mind. 6 Zeichen lang sein</div>
               </div>
             </div>
-            <div class="form-group">
-              <label for="confirmPassword">Bestätigung Passwort</label>
+            <div class="form-group" id="re-password-div">
+              <label for="confirmPassword" id="r-p-label">Confirm Password</label>
               <input id='confirmPassword' appConfirmEqualValidator='password' type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
               <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                 <div *ngIf="f.confirmPassword.errors.touched && f.confirmPassword.errors.required">Passwort wiederholt eingeben</div>
@@ -38,12 +38,12 @@
               </div>
             </div>
             <!--  </div>-->
-            <div class="form-group">
-              <button  [disabled]="loading" class="btn btn-primary">
+            <div class="form-group" id="buttons">
+              <button  [disabled]="loading" class="btn btn-primary" id="reg-button">
                 <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                Registrieren
+                Register
               </button>
-              <a routerLink="/login" class="btn btn-link">Abbrechen</a>
+              <a routerLink="/login" class="btn btn-link" id="cancel">Cancel</a>
             </div>
           </form>
 

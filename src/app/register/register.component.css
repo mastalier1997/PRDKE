@@ -1,0 +1,104 @@
+#reg-title{
+  margin-left: 50%;
+}
+
+#reg-content{
+  margin-left: 37.5%;
+}
+
+.form-group{
+  width: 50%;
+  background: #303e4f;
+  border-radius: 5px;
+}
+
+#username-div{
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+#password-div{
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+#re-password-div{
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+#u-label{
+  margin-right: 100%;
+  font-size: small;
+  background: #303e4f;
+}
+
+#p-label{
+  margin-right: 100%;
+  font-size: small;
+  background: #303e4f;
+}
+
+#r-p-label{
+  font-size: small;
+  background: #303e4f;
+  margin-right: 50%;
+}
+
+#username{
+  margin-top: 3px;
+  width: 99%;
+  outline: none;
+  border: none;
+  background: #303e4f;
+}
+
+#password{
+  margin-top: 3px;
+  width: 99%;
+  outline: none;
+  border: none;
+  background: #303e4f;
+}
+
+#confirmPassword{
+  margin-top: 3px;
+  width: 99%;
+  outline: none;
+  border: none;
+  background: #303e4f;
+}
+
+#buttons{
+  margin-top: 3%;
+  background: none;
+}
+
+#reg-button{
+  width: 105%;
+  height: 2%;
+  align-content: center;
+  align-items: center;
+  background: #66FCF1;
+  font-size: large;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+#cancel{
+  margin-left: 48%;
+  font-size: small;
+  text-decoration: none;
+}
+
+.invalid-feedback *{
+  background: #303e4f;
+  font-size: smaller;
+  color: red;
+}
