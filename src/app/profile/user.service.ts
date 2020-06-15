@@ -45,6 +45,12 @@ export class UserService {
     const request = new HttpRequest.Builder()
       .withMethod(HttpMethod.GET)
       .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/getPosts/incoming_webhook/getUserPosts')
+      /*.withHeaders({
+        "Content-Type": [ "application/json" ]
+      }).withBody(JSON.stringify({
+        'email': 'Birki',
+        'password': 'Test01!'
+      }))*/
       .build();
 
     // 3. Execute the built request

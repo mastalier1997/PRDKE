@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from './user.service';
 import {Mood} from '../timeline/mood';
-import {User} from '../timeline/user';
+import {User} from './user';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -12,14 +13,32 @@ import {User} from '../timeline/user';
 export class ProfileComponent implements OnInit {
 
   moods: Mood[];
-  user: User;
+  user: User[];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private http: HttpClient,) { }
 
   async ngOnInit() {
-    console.log('test');
-    this.user = await this.userService.getUserData();
-    this.moods = await this.userService.getUserPosts();
+    // this.user = await this.userService.getUserData();
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'/*,
+        "Authorization": this.getAuthorizationToken()*/
+      })
+    };
+
+    this.http.post<any>('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/userService/incoming_webhook/getUserData',
+      '{"user":"' + localStorage.getItem('username') + '"}', httpOptions).subscribe(
+        (response) => {console.log(response); this.user = response; console.log(this.user); }
+        );
+
+    this.http.post<any>('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/getPosts/incoming_webhook/getPostsFromUser',
+      '{"user":"' + localStorage.getItem('username') + '"}', httpOptions).subscribe(
+      (response) => {console.log(response); this.moods = response; }
+    );
+
+
+    // this.moods = await this.userService.getUserPosts();
 
   }
 

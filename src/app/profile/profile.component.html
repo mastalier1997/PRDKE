@@ -19,20 +19,20 @@
 
         <div class="user">
           <div class="user-name">
-            <p>{{user.username}}</p>
+            <p>{{user[0].username}}</p>
           </div>
           <div class="username">
-				    <p>@<span>{{user.username}}</span></p>
+				    <p>@<span>{{user[0].username}}</span></p>
           </div>
         </div>
 
         <div class="stats">
           <a href="#" title="8 Following" class="follow" id="following">
-            <span class="follow-values" id="following-value">8</span>
+            <span class="follow-values" id="following-value">{{user[0].follows.length}}</span>
             <span class="follow-word">Following</span>
           </a>
           <a href="#" title="10 Followers" class="follow" id="followers">
-            <span class="follow-values" id="followers-value">10</span>
+            <span class="follow-values" id="followers-value">0</span>
             <span class="follow-word">Followers</span>
           </a>
         </div>
