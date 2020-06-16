@@ -15,6 +15,7 @@ export class LogoutComponent implements OnInit {
 
   logout() {
     try {
+      localStorage.clear();
       const stitch = Stitch.defaultAppClient;
       stitch.auth.logout();
     } catch (e) {

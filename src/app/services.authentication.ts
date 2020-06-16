@@ -46,7 +46,8 @@ export class AuthenticationService {
     return stitchAppClient.auth
       .loginWithCredential(new UserPasswordCredential(email, password))
       .then((user) => {
-        Stitch.defaultAppClient.auth.addAuthListener(user);
+        // Stitch.defaultAppClient.auth.addAuthListener(user);
+        // localStorage.setItem('stitch', JSON.stringify(Stitch.defaultAppClient));
         console.log(`Logged in as user with id: ${user.id}`);
         // localStorage.setItem('currentUser', JSON.stringify(user));
         localStorage.setItem('userId', `${user.id}`); // JSON.stringify(email));

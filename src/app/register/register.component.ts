@@ -48,7 +48,9 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(6)]]
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+      firstname: [''],
+      surname: ['']
     });
   }
 
@@ -68,11 +70,11 @@ export class RegisterComponent implements OnInit {
 
     this.loading = true;
 
-    this.registerUser(this.f.username.value, this.f.password.value, null);
+    this.registerUser(this.f.username.value, this.f.password.value, this.f.surname.value, this.f.firstname.value);
   }
 
 
-  async registerUser(email, password, username) {
+  async registerUser(email, password, surname, firstname) {
     this.postElasticUrl = 'http://34.65.38.205:9200/users/_doc';
 
     let stitchAppClient;
@@ -96,14 +98,16 @@ export class RegisterComponent implements OnInit {
     emailPasswordClient.registerWithEmail(email, password)
       .then(() => {
         console.log('Successfully sent account confirmation email!');
-        // this.registerService.register(email, password);
+        this.registerService.register(email, password, surname, firstname);
+
         this.http.post<any>(this.postElasticUrl, '{\n' +
           '    "firstName": "' + 'null' + '",\n' +
           '    "lastName": "' + 'null' + '",\n' +
           '    "username": "' + email + '",\n' +
           '    "password": "' + password + '"\n' +
           '  }', httpOptions).subscribe();
-        this.router.navigate([this.route.snapshot.queryParams['/login'] || '/']);
+
+
       })
       .catch(err => console.error('Error registering new user:', err));
 

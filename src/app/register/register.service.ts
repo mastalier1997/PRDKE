@@ -9,7 +9,7 @@ export class RegisterService {
 
   constructor() { }
 
-  async register(username, password) {
+  async register(username, password, surname, firstname) {
     const app = Stitch.defaultAppClient;
     const http = app.getServiceClient(HttpServiceClient.factory, 'registrationService');
 
@@ -17,7 +17,7 @@ export class RegisterService {
     const request = new HttpRequest.Builder()
       .withMethod(HttpMethod.POST)
       .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/registrationService/incoming_webhook/registerUser')
-      .withBody( '{"username":"' + username + '","password":"' + password + '"}')
+      .withBody( '{"username":"' + username + '","password":"' + password + '", "surname":"' + surname + '","firstname":"' + firstname + '"}')
       .build();
 
     // 3. Execute the built request

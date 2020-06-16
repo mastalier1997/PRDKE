@@ -30,6 +30,19 @@
   width: 50%;
 }
 
+#firstname-div{
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+#surname-div{
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 50%;
+}
+
+
 #u-label{
   margin-right: 100%;
   font-size: small;
@@ -43,6 +56,18 @@
 }
 
 #r-p-label{
+  font-size: small;
+  background: #303e4f;
+  margin-right: 50%;
+}
+
+#firstname-label{
+  font-size: small;
+  background: #303e4f;
+  margin-right: 50%;
+}
+
+#surname-label{
   font-size: small;
   background: #303e4f;
   margin-right: 50%;
@@ -65,6 +90,22 @@
 }
 
 #confirmPassword{
+  margin-top: 3px;
+  width: 99%;
+  outline: none;
+  border: none;
+  background: #303e4f;
+}
+
+#firstname{
+  margin-top: 3px;
+  width: 99%;
+  outline: none;
+  border: none;
+  background: #303e4f;
+}
+
+#surname{
   margin-top: 3px;
   width: 99%;
   outline: none;

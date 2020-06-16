@@ -3,5 +3,7 @@ export interface User {
   stitchid: string;
   username: string;
   password: string;
+  firstname: string;
+  surname: string;
   follows: User[];
 }
