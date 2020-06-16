@@ -169,6 +169,7 @@
 .timeline-text{
   grid-area: text;
   background: #3a4b5f;
+  width: 68%;
 }
 
 .timeline-text *{
