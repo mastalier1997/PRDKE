@@ -1,0 +1,11 @@
+#logout{
+  outline: none;
+  border: none;
+  font-size: large;
+  background: #66FCF1;
+  color: black;
+  margin-top: 5%;
+  padding: 10px;
+  border-radius: 90px;
+  margin-left: -8px;
+}
