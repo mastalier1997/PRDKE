@@ -101,8 +101,8 @@ export class RegisterComponent implements OnInit {
         this.registerService.register(email, password, surname, firstname);
 
         this.http.post<any>(this.postElasticUrl, '{\n' +
-          '    "firstName": "' + 'null' + '",\n' +
-          '    "lastName": "' + 'null' + '",\n' +
+          '    "firstName": "' + firstname + '",\n' +
+          '    "lastName": "' + surname + '",\n' +
           '    "username": "' + email + '",\n' +
           '    "password": "' + password + '"\n' +
           '  }', httpOptions).subscribe();
