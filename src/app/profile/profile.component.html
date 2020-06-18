@@ -10,10 +10,7 @@
         <div class="follow-button">
           <div id="follow-button2">
             <a id="button-following" href="#" >Follow </a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-              if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+''
 
-            ;fjs.parentNode.insertBefore(js,fjs);}}(document, 'script');</script>
 
           </div>
         </div>
@@ -24,16 +21,16 @@
 
         <div class="user">
           <div class="user-name">
-            <p>{{user[1].firstname}} {{user[1].surname}}</p>
+            <p>{{user[0].firstname}} {{user[0].surname}}</p>
           </div>
           <div class="username">
-				    <p>@<span>{{user[1].username}}</span></p>
+				    <p>@<span>{{user[0].username}}</span></p>
           </div>
         </div>
 
         <div class="stats">
           <a href="#" title="8 Following" class="follow" id="following">
-            <span class="follow-values" id="following-value">{{user[1].follows.length}}</span>
+            <span class="follow-values" id="following-value">{{user[0].follows.length}}</span>
             <span class="follow-word">Following</span>
           </a>
           <a href="#" title="10 Followers" class="follow" id="followers">
