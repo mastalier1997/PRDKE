@@ -7,7 +7,7 @@
 .nav{
   margin-left: 15%;
   margin-top: 1%;
-  position: fixed;
+  position: absolute;
 }
 
 .nav a{
@@ -60,4 +60,20 @@ footer{
   margin-top: 50px;
 }
 
+@media screen and (max-width:900px) {
+  .nav{
+    margin-left: 5%;
+    margin-top: 1%;
+    position: fixed;
+    margin-right: 25%;
+  }
+
+  .search{
+    position: fixed;
+    margin: auto 10% auto 80%;
+    width: 70px;
+
+  }
+
+}
 

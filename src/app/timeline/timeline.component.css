@@ -54,3 +54,11 @@
   align-content: center;
 }
 
+@media screen and (max-width:900px) {
+  .timeline-text{
+    margin-left: -20%;
+    width: 42%;
+  }
+}
+
+
