@@ -12,7 +12,8 @@
 
 <div id="myDropdown" class="dropdown-content" *ngIf="this.isDivHidden"><script>div.style.visibility = "visible";</script>
   <div id="userSearch">
-  <br><a routerLink="profile" id="a1">{{user?.username}}</a>
+  <!--<br><a routerLink="profile" id="a1">{{user?.username}}</a>-->
+    <br><a (click)="openProfile(user.username)" id="a1">{{user?.username}}</a>
   </div>
   <div id="textSearch" *ngFor="let moodText of mood">
     <br><a routerLink="profile" id="a2">{{moodText['_source']?.text}}</a>

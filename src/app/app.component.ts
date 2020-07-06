@@ -47,6 +47,11 @@ export class AppComponent {
     return true;
   }
 
+  openProfile() {
+    localStorage.setItem('openUser', localStorage.getItem('username'));
+    this.router.navigate(['/profile']);
+  }
+
 }
 
 

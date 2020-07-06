@@ -23,6 +23,7 @@ const httpOptions = {
 export class TimelineService {
   // tslint:disable-next-line:max-line-length
   allPostsUrl = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/getPosts/incoming_webhook/getAllPosts';  // URL to web api
+  userPostsUrl = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/getPosts/incoming_webhook/getAllPosts';  // URL to web api
 
   private handleError: HandleError;
 
@@ -34,6 +35,14 @@ export class TimelineService {
 
   /** GET Moods from the server */
   getAllMoods(): Observable<Mood[]> {
+
+    /*const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+    console.log(localStorage.getItem('token'));*/
 
     return this.http.get<Mood[]>(this.allPostsUrl )
       .pipe(
@@ -57,17 +66,7 @@ export class TimelineService {
       const obj: Mood[] = JSON.parse(result.body.toString());
       console.log(obj);
       return obj;
-    })
-      /* .then(result => {
-        (async () => {
-          await delay(5000);
-          console.log(result);
-          console.log('soomeeethin');
-          return result;
-        })();
-        // console.log(result);
-        })*/
-      .catch(console.error);
+    }).catch(console.error);
 
 
     return null;

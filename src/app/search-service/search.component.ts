@@ -4,6 +4,7 @@ import {User} from '../timeline/user';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpResponse} from '@angular/common/http';
 import {Mood} from '../timeline/mood';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-search-service',
@@ -24,7 +25,7 @@ export class SearchServiceComponent implements OnInit {
 
   }
 
-  constructor(private searchservice: SearchService, private fb: FormBuilder) { }
+  constructor(private searchservice: SearchService, private fb: FormBuilder, private router: Router) { }
 
   getUser() {
     const userName = this.angForm2.value.searchText;
@@ -52,5 +53,11 @@ export class SearchServiceComponent implements OnInit {
 
   userNull() {
     this.user = null;
+  }
+
+  openProfile(user) {
+    console.log(user + 'opened');
+    localStorage.setItem('openUser', user);
+    this.router.navigate(['/profile']);
   }
 }

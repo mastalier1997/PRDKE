@@ -11,7 +11,6 @@ const httpOptions = {
   })
 };
 
-const userID = '5eada3f00952b44e417fcf82';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +42,7 @@ export class PostServiceService {
     this.http.post<any>(this.postElasticUrl, '{\n' +
       '    "emoji": "' + emoji + '",\n' +
       '    "text": "' + text + '",\n' +
-      '    "userID": "' + userID + '",\n' +
+      '    "userID": "' + localStorage.getItem('userId') + '",\n' +
       '    "timestamp": "' + Date.now() + '"\n' +
       '  }', httpOptions).subscribe();
 
@@ -60,12 +59,6 @@ export class PostServiceService {
 
     // 2. Build a new HttpRequest
     const request = new HttpRequest.Builder()
-      .withMethod(HttpMethod.POST)
-      .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood')
-      .withBody( '{"emoji":"' + emoji + '","text":"' + text + '","userId":"' + userId + '","username":"' + userName + '"}')
-      .build();
-
-    const request1 = new HttpRequest.Builder()
       .withMethod(HttpMethod.POST)
       .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/postPosts/incoming_webhook/postMood')
       .withBody( '{"emoji":"' + emoji + '","text":"' + text + '","userId":"' + userId + '","username":"' + userName + '"}')

@@ -15,10 +15,12 @@ export class ProfileComponent implements OnInit {
   moods: Mood[];
   user: User[];
 
-  constructor(private userService: UserService, private http: HttpClient,) { }
+  constructor(private userService: UserService, private http: HttpClient) { }
 
   async ngOnInit() {
     // this.user = await this.userService.getUserData();
+
+    const user = localStorage.getItem('openUser');
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -28,12 +30,12 @@ export class ProfileComponent implements OnInit {
     };
 
     this.http.post<any>('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/userService/incoming_webhook/getUserData',
-      '{"user":"' + localStorage.getItem('username') + '"}', httpOptions).subscribe(
+      '{"user":"' + user + '"}', httpOptions).subscribe(
         (response) => {console.log(response); this.user = response; console.log(this.user); }
         );
 
     this.http.post<any>('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/getPosts/incoming_webhook/getPostsFromUser',
-      '{"user":"' + localStorage.getItem('username') + '"}', httpOptions).subscribe(
+      '{"user":"' + user + '"}', httpOptions).subscribe(
       (response) => {console.log(response); this.moods = response; }
     );
 

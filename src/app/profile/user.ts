@@ -5,5 +5,5 @@ export interface User {
   password: string;
   firstname: string;
   surname: string;
-  follows: User[];
+  follows: string;
 }

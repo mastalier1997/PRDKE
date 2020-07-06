@@ -5,6 +5,7 @@ import {UserpostsService} from './userposts.service';
 import {delay} from 'rxjs/operators';
 import {Stitch} from 'mongodb-stitch-browser-sdk';
 import {HttpMethod, HttpRequest, HttpServiceClient} from 'mongodb-stitch-browser-services-http';
+import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-timeline',
@@ -14,6 +15,7 @@ import {HttpMethod, HttpRequest, HttpServiceClient} from 'mongodb-stitch-browser
 })
 export class TimelineComponent implements OnInit {
   moods: Mood[];
+  options: Record<string, string[]>;
 
   constructor(private timelineService: TimelineService, private userpostsService: UserpostsService) {}
 
@@ -23,17 +25,6 @@ export class TimelineComponent implements OnInit {
 
   async getMoods(all) {
     if (all) {
-
-      /*const result = this.getMoodsData(); // this.timelineService.getMoods();
-      console.log(result);
-
-      /*(async () => {
-        const result = this.timelineService.getMoods();
-        if (await result != null) {
-          console.log(result);
-        }
-      })();*/
-
       this.timelineService.getAllMoods()
         .subscribe(moods => { console.log(moods); this.moods = moods; });
     } else {

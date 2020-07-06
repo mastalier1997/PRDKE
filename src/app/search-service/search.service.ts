@@ -51,5 +51,7 @@ export class SearchService {
   get bodyText2() {
     return this.body2;
   }
+
+
 }
 

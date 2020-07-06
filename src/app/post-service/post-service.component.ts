@@ -174,7 +174,7 @@ export class PostServiceComponent implements OnInit {
     // Call to reset the form values
     this.angForm.get('postText').reset();
 
-    function delay(ms: number) {
+    /*function delay(ms: number) {
       return new Promise( resolve => setTimeout(resolve, ms) );
     }
 
@@ -182,7 +182,7 @@ export class PostServiceComponent implements OnInit {
     (async () => {
       await delay(500);
       location.reload();
-    })();
+    })();*/
   }
 
   addEmoji($event) {

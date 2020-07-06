@@ -52,6 +52,7 @@ export class AuthenticationService {
         // localStorage.setItem('currentUser', JSON.stringify(user));
         localStorage.setItem('userId', `${user.id}`); // JSON.stringify(email));
         localStorage.setItem('username', email); // JSON.stringify(email));
+        localStorage.setItem('token', `${user.auth.activeUserAuthInfo.accessToken}`);
         localStorage.setItem('userMail', email);
         localStorage.setItem('userpw', password);
         this.router.navigate([this.route.snapshot.queryParams['/spa'] || '/']);

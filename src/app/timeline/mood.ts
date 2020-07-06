@@ -6,7 +6,7 @@ export interface Mood {
   id: string;
   emoji: string;
   text: string;
-  userID: User;
+  stitchid: string;
   username: string;
   timestamp: Timestamp;
 }

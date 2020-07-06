@@ -31,12 +31,12 @@ export class UserpostsService {
   /** GET Moods from the server */
   getAllMoods(): Observable<Mood[]> {
 
-    /* const httpOptions = {
+    const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.getAuthorization()
+        Authorization: 'Bearer ' + localStorage.getItem('token')
       })
-    };*/
+    };
     return this.http.get<Mood[]>(this.allPostsUrl )
       .pipe(
         catchError(this.handleError('getMoods', []))
@@ -44,20 +44,30 @@ export class UserpostsService {
   }
 
 
-  getUserMoods() {
+  getUserMoods(): Observable<any> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+      })
+    };
+
 // 1. Instantiate an HTTP Service Client
     const app = Stitch.defaultAppClient;
     const http = app.getServiceClient(HttpServiceClient.factory, 'getPosts');
 
 // 2. Build a new HttpRequest
     const request = new HttpRequest.Builder()
-      .withMethod(HttpMethod.GET)
+      .withMethod(HttpMethod.GET).withBody(httpOptions)
       .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/getPosts/incoming_webhook/getUserPosts')
       .build();
 
 // 3. Execute the built request
     http.execute(request)
-      .then(console.log)
+      .then((result) => {console.log(result); return result;})
       .catch(console.error);
+
+    return null;
   }
 }

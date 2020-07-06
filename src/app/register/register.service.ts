@@ -17,7 +17,7 @@ export class RegisterService {
     const request = new HttpRequest.Builder()
       .withMethod(HttpMethod.POST)
       .withUrl('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/registrationService/incoming_webhook/registerUser')
-      .withBody( '{"username":"' + username + '","password":"' + password + '", "surname":"' + surname + '","firstname":"' + firstname + '"}')
+      .withBody( '{"username":"' + username + '","password":"' + '****' + '", "surname":"' + surname + '","firstname":"' + firstname + '"}')
       .build();
 
     // 3. Execute the built request

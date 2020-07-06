@@ -2,7 +2,7 @@
 
 
 <!-- Moods Main -->
-<div class="content">
+<div class="content" id="ctnt">
 
   <div class="nav" *ngIf="checkUrl2()">
     <div class="nav-text">
@@ -12,9 +12,12 @@
     <div class="nav-text" href="#" hidden>
       <a >Friends</a>
     </div>
+    <div class="nav-text">
+      <a class="nav-link" routerLink="feed" routerLinkActive="active" id="feed">Feed</a>
+    </div>
     <br>
     <div class="nav-text">
-      <a class="nav-link" routerLink="profile" routerLinkActive="active" id="profile">Profile</a>
+      <a class="nav-link" (click)="openProfile()" routerLinkActive="active" id="profile">Profile</a> <!-- routerLink="profile" -->
     </div>
     <div class="nav-text" id="logout">
       <a class="nav-link" ><app-logout></app-logout></a>
@@ -34,7 +37,10 @@
     </footer>
   </div>
 
+
 </div>
+
+
 </body>
 
 

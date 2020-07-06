@@ -26,6 +26,8 @@ import { RegisterComponent } from './register/register.component';
 import {AppRoutingModule} from './app-routing.module';
 import { SpaComponent } from './spa/spa.component';
 import { LogoutComponent } from './logout/logout.component';
+import { FeedComponent } from './feed/feed.component';
+import { FollowComponent } from './follow/follow.component';
 
 /*
 const routes: Routes = [
@@ -44,7 +46,9 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     SpaComponent,
-    LogoutComponent
+    LogoutComponent,
+    FeedComponent,
+    FollowComponent
 
   ],
   imports: [

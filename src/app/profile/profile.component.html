@@ -8,11 +8,7 @@
       <div class="profile-content" *ngIf="user">
 
         <div class="follow-button">
-          <div id="follow-button2">
-            <a id="button-following" href="#" >Follow </a>
-
-
-          </div>
+            <app-follow></app-follow>
         </div>
 
         <a title="Name"  class="avatar">
@@ -28,7 +24,7 @@
           </div>
         </div>
 
-        <div class="stats">
+        <!--<div class="stats">
           <a href="#" title="8 Following" class="follow" id="following">
             <span class="follow-values" id="following-value">{{user[0].follows.length}}</span>
             <span class="follow-word">Following</span>
@@ -37,7 +33,7 @@
             <span class="follow-values" id="followers-value">0</span>
             <span class="follow-word">Followers</span>
           </a>
-        </div>
+        </div>-->
       </div>
     </div>
     <!-- code end -->

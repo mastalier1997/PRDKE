@@ -1,0 +1,186 @@
+
+#profile-div{
+  width: 100%;
+  margin: 1% auto auto;
+
+}
+
+.row{
+  display: inline-flex;
+  width: 100%;
+  padding-bottom: 10px;
+  background: #303e4f;
+  border-radius: 10px;
+}
+.row *{
+  width: 99%;
+  margin: auto;
+  background: #303e4f;
+}
+
+.profile-content{
+  background: #303e4f;
+}
+
+#follow-button2{
+  border-radius: 90px;
+  border: 1px solid #66FCF1;
+  padding: 7px;
+}
+
+.follow-button *{
+  width: auto;
+  float: right;
+  margin-top: 1%;
+  margin-left: 1%;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  font-size: 15px;
+}
+
+.follow-button :hover{
+  color: #66FCF1;
+}
+
+.avatar{
+  margin: 3px;
+  width: 7%;
+  background: #303e4f;
+}
+
+.avatar *{
+  margin: 3px;
+  width: 7%;
+  height: 7%;
+  background: #303e4f;
+}
+
+#footer{
+  margin-top: 2em;
+  margin-left: 10px;
+}
+
+
+#license{
+  font-size: smaller;
+}
+
+.user{
+  padding-bottom: 10px;
+  background: #303e4f;
+}
+
+.follow{
+  margin-bottom: 5px;
+  background: #303e4f;
+}
+
+.user-name{
+  font-weight: bold;
+  font-size: large;
+}
+
+.username{
+  font-size: smaller;
+}
+
+.username *{
+  color: #bfbfbf;
+}
+
+.stats {
+
+}
+
+.follow{
+  outline: none;
+  text-decoration: none;
+}
+
+#following{
+  margin-left: 1%;
+  outline: none;
+}
+
+#following-value{
+  margin-right: 5px;
+}
+
+#followers{
+  margin-left: 25px;
+}
+
+#followers-value{
+  margin-right: 5px;
+}
+
+.follow-word{
+  margin-left: 5px;
+  color: #bfbfbf;
+}
+
+
+
+
+.timeline{
+  margin-top: 15px;
+}
+
+.timeline-content{
+  display: grid;
+  grid-template-columns: 130px 100px 50px 500px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". . . text"
+    "date emojy . text"
+    ". . . text";
+
+  background: #3a4b5f;
+
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.timeline-date{
+  grid-area: date;
+  font-size: small;
+  background: #3a4b5f;
+}
+
+.timeline-date *{
+  background: #3a4b5f;
+  align-items: center;
+  align-content: center;
+}
+
+.timeline-mood{
+  grid-area: emojy;
+  background: #3a4b5f;
+}
+
+.timeline-mood * {
+  background: #3a4b5f;
+  align-items: center;
+  align-content: center;
+}
+
+.timeline-text{
+  grid-area: text;
+  background: #3a4b5f;
+  width: 68%;
+}
+
+.timeline-text *{
+  background: #3a4b5f;
+  align-items: center;
+  align-content: center;
+}
+
+@media screen and (max-width:900px) {
+  .timeline-text{
+    margin-left: -20%;
+    width: 42%;
+  }
+}

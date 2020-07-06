@@ -15,7 +15,17 @@ export class AuthGuard implements CanActivate {
     // const currentUser = this.authenticationService.currentUserValue;
     try {
       const currentUser = Stitch.defaultAppClient;
-      return  true;
+
+      if (localStorage.getItem('username') !== null || localStorage.getItem('username') !== ''){
+        console.log(localStorage.getItem('username'));
+        return  true;
+      }
+
+      this.authenticationService.login(localStorage.getItem('username'), localStorage.getItem('userpw')).catch((result) => {
+        // not logged in so redirect to login page with the return url
+        this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+        return false;
+      });
     } catch (e) {
 
         this.authenticationService.login(localStorage.getItem('username'), localStorage.getItem('userpw')).catch((result) => {
