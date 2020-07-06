@@ -17,20 +17,16 @@ export class TimelineComponent implements OnInit {
   moods: Mood[];
   options: Record<string, string[]>;
 
-  constructor(private timelineService: TimelineService, private userpostsService: UserpostsService) {}
+  constructor(private timelineService: TimelineService) {}
 
   ngOnInit() {
-    this.getMoods(true);
+    this.getMoods();
   }
 
-  async getMoods(all) {
-    if (all) {
-      this.timelineService.getAllMoods()
-        .subscribe(moods => { console.log(moods); this.moods = moods; });
-    } else {
-      this.moods = await this.timelineService.getMoods();
-      // this.userpostsService.getUserMoods();
-    }
+  async getMoods() {
+
+    this.timelineService.getAllMoods()
+      .subscribe(moods => { console.log(moods); this.moods = moods; });
 
   }
 

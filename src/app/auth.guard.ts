@@ -12,13 +12,13 @@ export class AuthGuard implements CanActivate {
   ) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    // const currentUser = this.authenticationService.currentUserValue;
+
     try {
       const currentUser = Stitch.defaultAppClient;
 
-      if (localStorage.getItem('username') !== null || localStorage.getItem('username') !== ''){
+      if (localStorage.getItem('username') !== null || localStorage.getItem('username') !== '') {
         console.log(localStorage.getItem('username'));
-        return  true;
+        return true;
       }
 
       this.authenticationService.login(localStorage.getItem('username'), localStorage.getItem('userpw')).catch((result) => {
@@ -28,19 +28,13 @@ export class AuthGuard implements CanActivate {
       });
     } catch (e) {
 
-        this.authenticationService.login(localStorage.getItem('username'), localStorage.getItem('userpw')).catch((result) => {
+        /* this.authenticationService.login(localStorage.getItem('username'), localStorage.getItem('userpw')).catch((result) => {
           // not logged in so redirect to login page with the return url
           this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
           return false;
-        });
+        }); */
+      this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
 
     }
-
-    /* if (currentUser) {
-      // authorised so return true
-      return true;
-    } */
-
-
   }
 }

@@ -14,20 +14,39 @@ export class ProfileComponent implements OnInit {
 
   moods: Mood[];
   user: User[];
+  myUser: User[];
+  follows: string;
 
   constructor(private userService: UserService, private http: HttpClient) { }
 
   async ngOnInit() {
-    // this.user = await this.userService.getUserData();
 
     const user = localStorage.getItem('openUser');
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'/*,
-        "Authorization": this.getAuthorizationToken()*/
+        'Content-Type': 'application/json'
       })
     };
+
+    this.http.post<any>('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/userService/incoming_webhook/getUserData',
+      '{"user":"' + localStorage.getItem('username') + '"}', httpOptions).subscribe(
+      (response) => {
+        this.myUser = response;
+        const flw = this.user[0].follows;
+
+        this.follows = 'false';
+
+        for (let i = 0; i < flw.length; i++){
+          if (flw[i] === user) {
+            this.follows = 'true';
+          }
+        }
+
+        localStorage.setItem('isFollowing', this.follows);
+
+      }
+    );
 
     this.http.post<any>('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/userService/incoming_webhook/getUserData',
       '{"user":"' + user + '"}', httpOptions).subscribe(
@@ -39,8 +58,6 @@ export class ProfileComponent implements OnInit {
       (response) => {console.log(response); this.moods = response; }
     );
 
-
-    // this.moods = await this.userService.getUserPosts();
 
   }
 

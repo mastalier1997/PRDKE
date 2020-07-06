@@ -52,7 +52,7 @@ export class FollowService {
           .build();
 
         // 3. Execute the built request
-        return http.execute(request)
+        http.execute(request)
           .then(console.log)
           .catch(console.error);
       }

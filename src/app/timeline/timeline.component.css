@@ -45,6 +45,7 @@
 
 .timeline-text{
   grid-area: text;
+  width: 80%;
   background: #3a4b5f;
 }
 

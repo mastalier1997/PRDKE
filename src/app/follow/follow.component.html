@@ -1,1 +1,2 @@
-<button id="follow-button2" (click)="follow()">Follow</button>
+<button id="follow-button2" *ngIf="follows === 'false'" (click)="follow()">Follow</button>
+<!-- <button id="follow-button2" *ngIf="follows === 'true'" (click)="follow()">Already Following</button> -->

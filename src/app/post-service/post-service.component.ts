@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PostServiceService} from './post-service.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -11,10 +12,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class PostServiceComponent implements OnInit {
 
-  constructor(private postService: PostServiceService, private  fb: FormBuilder) {this.createForm(); }
+  constructor(private postService: PostServiceService, private  fb: FormBuilder,  private router: Router, private route: ActivatedRoute) {this.createForm(); }
   angForm: FormGroup;
 
   emojis = [
+      {
+        displayValue: 'Select',
+        value: ''
+      },
       {
         displayValue: '😀',
         value: 'happy'
@@ -174,15 +179,16 @@ export class PostServiceComponent implements OnInit {
     // Call to reset the form values
     this.angForm.get('postText').reset();
 
-    /*function delay(ms: number) {
+    function delay(ms: number) {
       return new Promise( resolve => setTimeout(resolve, ms) );
     }
 
 
     (async () => {
       await delay(500);
-      location.reload();
-    })();*/
+      // location.reload();
+      this.router.navigate(['/home']);
+    })();
   }
 
   addEmoji($event) {

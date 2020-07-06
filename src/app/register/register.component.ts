@@ -37,11 +37,6 @@ export class RegisterComponent implements OnInit {
                private http: HttpClient,
                httpErrorHandler: HttpErrorHandler) {
     this.handleError = httpErrorHandler.createHandleError('TimelineService');
-
-    // redirect to home if already logged in
-        /*if (this.authenticationService.currentUserValue) {
-          this.router.navigate(['/spa']);
-    }*/
   }
 
   ngOnInit(): void {
@@ -83,14 +78,13 @@ export class RegisterComponent implements OnInit {
         'Content-Type': 'application/json'
       })
     };
+
     try {
       stitchAppClient = Stitch.initializeDefaultAppClient('moods-unbhh');
     } catch (e) {
       console.log(e);
       stitchAppClient = Stitch.defaultAppClient;
     }
-// Vorname & Nachname fehlt noch
-
 
     const emailPasswordClient = stitchAppClient.auth
       .getProviderClient(UserPasswordAuthProviderClient.factory);
@@ -106,20 +100,7 @@ export class RegisterComponent implements OnInit {
           '    "username": "' + email + '",\n' +
           '    "password": "' + password + '"\n' +
           '  }', httpOptions).subscribe();
-
-
       })
       .catch(err => console.error('Error registering new user:', err));
-
-    /*try {
-      const stitch = Stitch.initializeDefaultAppClient('moods-unbhh');
-      const registerUser = async (email: string, password: string) => {
-        return await stitch.auth.emailPassword.registerUser(email, password);
-      }
-    } catch (e) {
-      console.log(e);
-    }*/
   }
-
-
 }

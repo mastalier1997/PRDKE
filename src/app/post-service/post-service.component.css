@@ -68,7 +68,7 @@
 }
 
 .post-emojy * {
-  width: 50px;
+  width: 85px;
   height: 30px;
   font-size: large;
   border: none;
@@ -94,3 +94,15 @@
 }
 
 
+#ps-button{
+  outline: none;
+  border: none;
+  font-size: large;
+  background: #66FCF1;
+  color: black;
+  height: 90%;
+  width: 120%;
+  padding: 5px;
+  border-radius: 90px;
+
+}

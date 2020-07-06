@@ -29,15 +29,15 @@
 }
 
 #footer{
-  display: flex;
+
   height: 100%;
-  margin-top: 2em;
+  font-size: 10px;
   margin-left: 10px;
 }
 
 footer{
   float: bottom;
-  display: flex;
+
 }
 
 #license{

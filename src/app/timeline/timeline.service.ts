@@ -36,14 +36,6 @@ export class TimelineService {
   /** GET Moods from the server */
   getAllMoods(): Observable<Mood[]> {
 
-    /*const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + localStorage.getItem('token')
-      })
-    };
-    console.log(localStorage.getItem('token'));*/
-
     return this.http.get<Mood[]>(this.allPostsUrl )
       .pipe(
         catchError(this.handleError('getMoods', []))
@@ -67,8 +59,6 @@ export class TimelineService {
       console.log(obj);
       return obj;
     }).catch(console.error);
-
-
     return null;
   }
 

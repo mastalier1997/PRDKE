@@ -12,23 +12,18 @@
 
 <div id="myDropdown" class="dropdown-content" *ngIf="this.isDivHidden"><script>div.style.visibility = "visible";</script>
   <div id="userSearch">
-  <!--<br><a routerLink="profile" id="a1">{{user?.username}}</a>-->
     <br><a (click)="openProfile(user.username)" id="a1">{{user?.username}}</a>
   </div>
   <div id="textSearch" *ngFor="let moodText of mood">
-    <br><a routerLink="profile" id="a2">{{moodText['_source']?.text}}</a>
+    <br><a (click)="openProfile(moodText.username)" id="a2">{{moodText['_source']?.text}}</a>
   </div>
 </div>
 
 
 <script>
 
-
-
   let submit = document.getElementById("b1");
   let div = document.getElementsByClassName("dropdown-content");
     div.style.visibility = "visible";
-
-
 
 </script>

@@ -48,7 +48,7 @@
             </div>
             <!--  </div>-->
             <div class="form-group" id="buttons">
-              <button  [disabled]="loading" routerLink="/" class="btn btn-primary" id="reg-button">
+              <button type="button" (click)="onSubmit()" [disabled]="loading" routerLink="/login" class="btn btn-primary" id="reg-button">
                 <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
                 Register
               </button>

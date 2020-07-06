@@ -9,10 +9,12 @@ import {FollowService} from './follow.service';
   styleUrls: ['./follow.component.css']
 })
 export class FollowComponent implements OnInit {
+  follows: string;
 
   constructor(private followService: FollowService) { }
 
   ngOnInit(): void {
+    this.follows = localStorage.getItem('isFollowing');
   }
 
   follow() {

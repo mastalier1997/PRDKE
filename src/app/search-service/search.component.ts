@@ -46,7 +46,6 @@ export class SearchServiceComponent implements OnInit {
     });
   }
 
-
   changeVisibility() {
     this.isDivHidden = !this.isDivHidden;
   }
