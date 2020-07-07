@@ -5,6 +5,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpResponse} from '@angular/common/http';
 import {Mood} from '../timeline/mood';
 import {Router} from '@angular/router';
+import {ProfileComponent} from '../profile/profile.component';
 
 @Component({
   selector: 'app-search-service',

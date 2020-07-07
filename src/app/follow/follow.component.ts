@@ -15,7 +15,18 @@ export class FollowComponent implements OnInit {
   constructor(private followService: FollowService, private router: Router) { }
 
   ngOnInit(): void {
-    this.follows = localStorage.getItem('isFollowing');
+
+    function delay(ms: number) {
+      return new Promise( resolve => setTimeout(resolve, ms) );
+    }
+
+
+    (async () => {
+      await delay(200);
+      // location.reload();
+      this.follows = localStorage.getItem('isFollowing');
+    })();
+
   }
 
   follow() {

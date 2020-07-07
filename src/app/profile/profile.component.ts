@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
 
     const user = localStorage.getItem('openUser');
+    console.log(user);
 
     const httpOptions = {
       headers: new HttpHeaders({
@@ -39,7 +40,7 @@ export class ProfileComponent implements OnInit {
 
         this.follows = 'false';
 
-        for (let i = 0; i < flw.length; i++){
+        for (let i = 0; i < flw.length; i++) {
           if (flw[i] === user) {
             this.follows = 'true';
             console.log('follows');
