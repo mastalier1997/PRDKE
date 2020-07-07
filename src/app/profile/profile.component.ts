@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(private userService: UserService, private http: HttpClient) { }
 
-  async ngOnInit() {
+  ngOnInit() {
 
     const user = localStorage.getItem('openUser');
 
@@ -29,17 +29,20 @@ export class ProfileComponent implements OnInit {
       })
     };
 
+    console.log(localStorage.getItem('username'));
     this.http.post<any>('https://webhooks.mongodb-stitch.com/api/client/v2.0/app/moods-unbhh/service/userService/incoming_webhook/getUserData',
       '{"user":"' + localStorage.getItem('username') + '"}', httpOptions).subscribe(
       (response) => {
         this.myUser = response;
-        const flw = this.user[0].follows;
+        const flw = this.myUser[0].follows.split(';');
+        console.log(flw);
 
         this.follows = 'false';
 
         for (let i = 0; i < flw.length; i++){
           if (flw[i] === user) {
             this.follows = 'true';
+            console.log('follows');
           }
         }
 

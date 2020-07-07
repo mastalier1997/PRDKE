@@ -68,11 +68,11 @@ export class FollowService {
         this.user = response;
         console.log(this.user);
 
-        const flw = this.user[0].follows;
+        const flw = this.user[0].follows.split(';');
         let following = '';
 
         for (let i = 0; i < flw.length; i++) {
-          if (flw[i] !== follows) {
+          if (flw[i] !== follows && flw[i] !== '') {
             following += flw[i] + ';';
           }
         }

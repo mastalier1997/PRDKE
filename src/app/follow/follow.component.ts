@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TimelineService} from '../timeline/timeline.service';
 import {FollowService} from './follow.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-follow',
@@ -11,7 +12,7 @@ import {FollowService} from './follow.service';
 export class FollowComponent implements OnInit {
   follows: string;
 
-  constructor(private followService: FollowService) { }
+  constructor(private followService: FollowService, private router: Router) { }
 
   ngOnInit(): void {
     this.follows = localStorage.getItem('isFollowing');
@@ -20,6 +21,16 @@ export class FollowComponent implements OnInit {
   follow() {
     const followName = localStorage.getItem('openUser');
     this.followService.putFollows(followName);
+
+    this.router.navigate(['/home']);
+  }
+
+  deletefollow() {
+    const followName = localStorage.getItem('openUser');
+    this.followService.deleteFollows(followName);
+
+    this.router.navigate(['/home']);
+
   }
 
 }
